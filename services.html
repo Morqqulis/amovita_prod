@@ -1,0 +1,672 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>Services — Amovita</title>
+	<meta charset="UTF-8">
+	<meta name="format-detection" content="telephone=no">
+	<!-- <meta http-equiv="Content-Security-Policy"
+         content="default-src 'self' data: blob:; font-src 'self' data: blob: https:; style-src 'self' 'unsafe-inline' data:; script-src 'self' 'unsafe-inline' 'unsafe-eval' blob:; img-src 'self' data: blob: https:; connect-src 'self' ws: wss:"> -->
+
+	<link rel="shortcut icon" href="favicon.ico">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<!-- Fonts: Playfair Display (400, 600, 600i) + Inter Tight (400, 500, 600, 700, 400i) -->
+	<!-- Playfair 400 (Regular) drives the interior-page lede paragraphs (about/services/
+        contact/our-people/who-we-help/training/industry/service-details/publications/
+        profile); without it those ledes fell back to the 600 face and rendered too heavy. -->
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Playfair+Display:ital,wght@0,400;0,600;1,600&display=swap&_v=20260722041947">
+
+	<!-- Motion layer switch. Runs before the page paints, so elements that
+        animate in start hidden instead of flashing into place first. With
+        scripts off this line never runs and nothing is ever hidden — see
+        the header of scss/project/motion.scss for the full contract. -->
+	<script>
+		document.documentElement.classList.add('anim');
+	</script>
+
+	<link rel="stylesheet" href="css/main.css?_v=20260722041947">
+</head>
+
+<body class="page-services">
+	<div class="wrapper">
+		<header class="header">
+			<div class="header__container">
+				<a href="index.html" class="header__logo" aria-label="Amovita — home">
+					<img class="header__logo-img header__logo-img_dark" src="img/common/logo-dark.svg" alt="" width="134" height="116">
+					<img class="header__logo-img header__logo-img_light" src="img/common/logo-white.svg" alt="" width="134" height="116">
+				</a>
+
+				<nav class="header__nav" aria-label="Primary">
+					<div class="header__panel-top">
+						<a href="index.html" class="header__panel-logo" aria-label="Amovita — home">
+							<img src="img/common/logo-white.svg" alt="" width="134" height="116">
+						</a>
+						<button type="button" class="header__close" aria-label="Close menu">
+							<svg aria-hidden="true">
+								<use href="img/icons/icons.svg#svg-close"></use>
+							</svg>
+						</button>
+					</div>
+					<ul class="header__menu">
+						<li class="header__item header__item_about">
+							<a href="about.html" class="header__link">About Us</a>
+						</li>
+						<li class="header__item header__item_has-drop header__item_services">
+							<button type="button" class="header__link header__toggle" aria-expanded="false" aria-haspopup="true">
+								Services
+								<svg class="header__caret" aria-hidden="true">
+									<use href="img/icons/icons.svg#svg-caret-down"></use>
+								</svg>
+							</button>
+							<div class="header__drop">
+								<ul class="header__submenu">
+									<li><a href="service-details.html" class="header__sublink">Strategic Consulting</a></li>
+									<li><a href="service-details.html" class="header__sublink">Coaching &amp; Supervision</a></li>
+									<li><a href="service-details.html" class="header__sublink">Organisational Design</a></li>
+									<li><a href="service-details.html" class="header__sublink">EAP Services</a></li>
+									<li><a href="service-details.html" class="header__sublink">Workplace Investigation</a></li>
+									<li><a href="service-details.html" class="header__sublink">Mediation</a></li>
+									<li><a href="service-details.html" class="header__sublink">Executive Services</a></li>
+								</ul>
+							</div>
+						</li>
+						<li class="header__item header__item_has-drop header__item_training">
+							<button type="button" class="header__link header__toggle" aria-expanded="false" aria-haspopup="true">
+								Training
+								<svg class="header__caret" aria-hidden="true">
+									<use href="img/icons/icons.svg#svg-caret-down"></use>
+								</svg>
+							</button>
+							<div class="header__drop">
+								<ul class="header__submenu">
+									<li><a href="training-overview.html" class="header__sublink">Training Overview</a></li>
+									<li><a href="training-calendar.html" class="header__sublink">Training Calendar</a></li>
+									<li><a href="training-overview.html" class="header__sublink">Training Directory</a></li>
+								</ul>
+							</div>
+						</li>
+						<li class="header__item header__item_has-drop header__item_who">
+							<button type="button" class="header__link header__toggle" aria-expanded="false" aria-haspopup="true">
+								Who We help
+								<svg class="header__caret" aria-hidden="true">
+									<use href="img/icons/icons.svg#svg-caret-down"></use>
+								</svg>
+							</button>
+							<div class="header__drop">
+								<ul class="header__submenu">
+									<li><a href="industry-detail.html" class="header__sublink">Construction &amp; Property</a></li>
+									<li><a href="industry-detail.html" class="header__sublink">Manufacturing &amp; Industrial</a></li>
+									<li><a href="industry-detail.html" class="header__sublink">Mining &amp; Resources</a></li>
+									<li><a href="industry-detail.html" class="header__sublink">Transport &amp; Logistics</a></li>
+								</ul>
+							</div>
+						</li>
+						<li class="header__item header__item_publications">
+							<a href="publications.html" class="header__link">Publications</a>
+						</li>
+					</ul>
+					<div class="header__panel-foot">
+						<a href="contact.html" class="btn btn_primary header__panel-cta">Talk to us</a>
+					</div>
+				</nav>
+
+				<div class="header__actions">
+					<button type="button" class="header__cart" aria-label="Cart">
+						<svg class="header__cart-icon" aria-hidden="true">
+							<use href="img/icons/icons.svg#svg-cart"></use>
+						</svg>
+					</button>
+					<a href="contact.html" class="btn btn_primary header__cta">Talk to us</a>
+					<button type="button" class="icon-menu header__burger" aria-label="Open menu"><span></span></button>
+				</div>
+			</div>
+		</header>
+
+		<main class="page">
+
+			<!-- ============================================== SERVICES HERO -->
+			<section class="services-hero">
+				<div class="services-hero__inner container">
+					<div class="services-hero__content" data-anim-stagger="90">
+						<nav class="services-hero__crumb" aria-label="Breadcrumb" data-anim="fade-up">
+							<a href="index.html" class="services-hero__crumb-link">Home</a>
+							<span class="services-hero__crumb-sep" aria-hidden="true">/</span>
+							<span class="services-hero__crumb-current">Service</span>
+						</nav>
+
+						<!-- The white quick-links pane the Figma frame shows floating
+                       here is the HEADER's own "Services" dropdown, drawn in its
+                       open state to document the nav (it sits directly under the
+                       "Services" nav item, and lists the same seven services the
+                       shared header already carries). It was reproduced as a
+                       permanent page element, which read as a dropdown stuck
+                       open. Removed — html/sections/header.htm owns it. -->
+						<div class="services-hero__group">
+							<h1 class="services-hero__title" data-anim="fade-up">Our <em>Services</em></h1>
+							<p class="services-hero__lead" data-anim="fade-up">Amovita offers a wide range of training and professional development programs in leadership and organisational excellence &mdash; designed to be implemented directly back into your workplace.</p>
+
+							<div class="services-hero__actions" data-anim="fade-up">
+								<a href="contact.html" class="btn btn_primary">Talk to us</a>
+								<a href="training-overview.html" class="btn btn_link">
+									Our Training Programs
+									<svg aria-hidden="true">
+										<use href="img/icons/icons.svg#svg-arrow-circle-right"></use>
+									</svg>
+								</a>
+							</div>
+						</div>
+					</div>
+
+					<!-- Photo frame rises in after the text; the faint leaf
+                    inside drifts on scroll and toward the pointer — same
+                    treatment as the About hero. -->
+					<div class="services-hero__media" data-anim="fade-up" data-anim-delay="220">
+						<span class="services-hero__media-deco" aria-hidden="true"></span>
+						<img class="services-hero__media-leaf" src="img/common/leaf-outline.svg" alt="" data-parallax="0.05" data-parallax-mouse="12" aria-hidden="true">
+						<picture><source srcset="img/services/services-hero.webp" type="image/webp"><img class="services-hero__media-photo" src="img/services/services-hero.jpg" alt="Amovita consultants reviewing a project together"></picture>
+					</div>
+				</div>
+
+				<img class="services-hero__wave" src="img/common/wave-cream.svg" alt="" aria-hidden="true">
+			</section>
+
+			<!-- =============================================== SERVICES LIST -->
+			<section class="services-list">
+				<div class="services-list__inner container">
+					<div class="services-list__head" data-anim-stagger="90">
+						<h2 class="services-list__title" data-anim="fade-up">Our Trustees</h2>
+						<p class="services-list__text" data-anim="fade-up">Amovita&rsquo;s board of trustees is made up of committed, effective and generous community leaders who are responsible for safeguarding our mission, policies, assets and grantmaking.</p>
+					</div>
+
+					<div class="services-list__rows" data-anim-stagger="70">
+
+						<!-- CONTENT FLAG — every collapsible row below carries the
+                       SAME body paragraph, because that is what the Figma frame
+                       holds: the designer pasted one strategy blurb into all
+                       seven rows' hidden text layers. Reproduced verbatim per
+                       the page's existing convention (see "Our Trustees" and
+                       "Set up EAp" flags in services.scss); the client owes us
+                       real per-service copy. -->
+
+						<!-- Strategic Consulting -->
+						<article data-anim="fade-up" class="service-row service-row_strategic">
+							<span class="service-row__bar" aria-hidden="true"></span>
+							<div class="service-row__body">
+								<div class="service-row__inner">
+									<span class="service-row__icon"><img src="img/services/service-strategic-navy.svg" alt="" width="56" height="56" aria-hidden="true"></span>
+									<h3 class="service-row__title">Strategic Consulting</h3>
+									<span class="service-row__toggle" aria-hidden="true"></span>
+								</div>
+								<div class="service-row__panel">
+									<div class="service-row__panel-inner">
+										<div class="service-row__panel-col">
+											<p class="service-row__panel-text">Savvy business leaders and managers have a consultant right beside them to ensure peak performance. Our strategy team works alongside you to develop an effective strategy program you can easily operationalise. We offer strategy planning, organisational and business reviews, consulting advice and can support your business to implement an effective strategy program that leads to divergent thinking and success.</p>
+											<a href="service-details.html" class="btn btn_primary">Explore service</a>
+										</div>
+									</div>
+								</div>
+							</div>
+						</article>
+
+						<!-- Coaching & Supervision (expanded) -->
+						<article data-anim="fade-up" class="service-row service-row_coaching service-row_expanded">
+							<span class="service-row__bar" aria-hidden="true"></span>
+							<div class="service-row__body">
+								<div class="service-row__inner">
+									<span class="service-row__icon"><img src="img/services/service-coaching-navy.svg" alt="" width="56" height="56" aria-hidden="true"></span>
+									<h3 class="service-row__title">Coaching &amp; Supervision</h3>
+									<span class="service-row__toggle" aria-hidden="true"></span>
+								</div>
+								<div class="service-row__panel">
+									<div class="service-row__panel-inner">
+										<div class="service-row__panel-col">
+											<p class="service-row__panel-text">We provide a range of executive and leadership coaching and supervision services suited for any business or organisation &mdash; from foundational to advanced levels, for individuals and groups.</p>
+											<p class="service-row__panel-text">Our coaching includes the latest leadership research, neuroscience and evidence-based approaches. Pre-purchased packages available on weekly, fortnightly or monthly basis.</p>
+											<a href="contact.html" class="btn btn_primary">Start a conversation</a>
+										</div>
+										<div class="service-row__panel-col">
+											<p class="service-row__included-label">What&rsquo;s Included</p>
+											<ul class="service-row__included-list">
+												<li>
+													<p class="service-row__included-item-title">Individual Coaching</p>
+													<p class="service-row__included-item-text">1-on-1 sessions tailored to the individual&rsquo;s goals, role and stage of leadership.</p>
+												</li>
+												<li>
+													<p class="service-row__included-item-title">Group Coaching</p>
+													<p class="service-row__included-item-text">1-on-1 sessions tailored to the individual&rsquo;s goals, role and stage of leadership.</p>
+												</li>
+												<li>
+													<p class="service-row__included-item-title">Supervision - Clinical</p>
+													<p class="service-row__included-item-text">Professional clinical supervision for practitioners at all levels of experience.</p>
+												</li>
+												<li>
+													<p class="service-row__included-item-title">Supervision - Management</p>
+													<p class="service-row__included-item-text">Management supervision supporting leaders to reflect, grow and lead effectively.</p>
+												</li>
+											</ul>
+										</div>
+									</div>
+								</div>
+							</div>
+						</article>
+
+						<!-- Organisational Design -->
+						<article data-anim="fade-up" class="service-row service-row_orgdesign">
+							<span class="service-row__bar" aria-hidden="true"></span>
+							<div class="service-row__body">
+								<div class="service-row__inner">
+									<span class="service-row__icon"><img src="img/services/service-orgdesign-navy.svg" alt="" width="56" height="56" aria-hidden="true"></span>
+									<h3 class="service-row__title">Organisational Design</h3>
+									<span class="service-row__toggle" aria-hidden="true"></span>
+								</div>
+								<div class="service-row__panel">
+									<div class="service-row__panel-inner">
+										<div class="service-row__panel-col">
+											<p class="service-row__panel-text">Savvy business leaders and managers have a consultant right beside them to ensure peak performance. Our strategy team works alongside you to develop an effective strategy program you can easily operationalise. We offer strategy planning, organisational and business reviews, consulting advice and can support your business to implement an effective strategy program that leads to divergent thinking and success.</p>
+											<a href="service-details.html" class="btn btn_primary">Explore service</a>
+										</div>
+									</div>
+								</div>
+							</div>
+						</article>
+
+						<!-- Meditation -->
+						<article data-anim="fade-up" class="service-row service-row_meditation">
+							<span class="service-row__bar" aria-hidden="true"></span>
+							<div class="service-row__body">
+								<div class="service-row__inner">
+									<span class="service-row__icon"><img src="img/services/service-mediation-navy.svg" alt="" width="56" height="56" aria-hidden="true"></span>
+									<h3 class="service-row__title">Meditation</h3>
+									<span class="service-row__toggle" aria-hidden="true"></span>
+								</div>
+								<div class="service-row__panel">
+									<div class="service-row__panel-inner">
+										<div class="service-row__panel-col">
+											<p class="service-row__panel-text">Savvy business leaders and managers have a consultant right beside them to ensure peak performance. Our strategy team works alongside you to develop an effective strategy program you can easily operationalise. We offer strategy planning, organisational and business reviews, consulting advice and can support your business to implement an effective strategy program that leads to divergent thinking and success.</p>
+											<a href="service-details.html" class="btn btn_primary">Explore service</a>
+										</div>
+									</div>
+								</div>
+							</div>
+						</article>
+
+						<!-- EAP Services (collapsed, explicit CTA) -->
+						<article data-anim="fade-up" class="service-row service-row_eap">
+							<span class="service-row__bar" aria-hidden="true"></span>
+							<div class="service-row__body">
+								<div class="service-row__inner">
+									<span class="service-row__icon"><img src="img/services/service-eap-navy.svg" alt="" width="56" height="56" aria-hidden="true"></span>
+									<h3 class="service-row__title">EAP Services</h3>
+									<a href="service-details.html" class="btn btn_outline service-row__link">Explore Service</a>
+								</div>
+							</div>
+						</article>
+
+						<!-- Workplace Investigations (collapsed, explicit CTA) -->
+						<article data-anim="fade-up" class="service-row service-row_workplace">
+							<span class="service-row__bar" aria-hidden="true"></span>
+							<div class="service-row__body">
+								<div class="service-row__inner">
+									<span class="service-row__icon"><img src="img/services/service-workplace-navy.svg" alt="" width="56" height="56" aria-hidden="true"></span>
+									<h3 class="service-row__title">Workplace Invest.</h3>
+									<a href="service-details.html" class="btn btn_outline service-row__link">Explore Service</a>
+								</div>
+							</div>
+						</article>
+
+						<!-- Executive Services (collapsed, explicit CTA) -->
+						<article data-anim="fade-up" class="service-row service-row_executive">
+							<span class="service-row__bar" aria-hidden="true"></span>
+							<div class="service-row__body">
+								<div class="service-row__inner">
+									<span class="service-row__icon"><img src="img/services/service-executive-navy.svg" alt="" width="56" height="56" aria-hidden="true"></span>
+									<h3 class="service-row__title">Executive Services</h3>
+									<a href="service-details.html" class="btn btn_outline service-row__link">Explore Service</a>
+								</div>
+							</div>
+						</article>
+
+					</div>
+				</div>
+			</section>
+
+			<span class="services-divider" aria-hidden="true"></span>
+
+			<!-- ========================================= TRAINING & PROGRAMS -->
+			<section class="training-programs">
+				<div class="training-programs__inner container" data-anim-stagger="80">
+					<img class="training-programs__icon" src="img/common/service-training.svg" alt="" width="64" height="64" data-anim="fade-up" aria-hidden="true">
+					<h2 class="training-programs__title" data-anim="fade-up">Training &amp; Programs</h2>
+					<p class="training-programs__text" data-anim="fade-up">Over 100 training workshops and programs for managers, leaders, business owners and staff &mdash; dynamic, tailored, and designed to achieve lasting organisational performance.</p>
+
+					<!-- Own stagger group: the cards run on their own clock, so
+                    the head above is not held back waiting for six of them. -->
+					<div class="training-programs__grid" data-anim-stagger="70">
+						<article class="card-training" data-anim="fade-up">
+							<img class="card-training__icon" src="img/services/icon-brain.svg" alt="" width="40" height="40" aria-hidden="true">
+							<div class="card-training__body">
+								<h3 class="card-training__title">Neuroscience &amp; Leadership</h3>
+								<p class="card-training__text">12+ programs available</p>
+							</div>
+						</article>
+						<article class="card-training" data-anim="fade-up">
+							<img class="card-training__icon" src="img/services/icon-brain.svg" alt="" width="40" height="40" aria-hidden="true">
+							<div class="card-training__body">
+								<h3 class="card-training__title">Organisational Performance</h3>
+								<p class="card-training__text">20+ programs available</p>
+							</div>
+						</article>
+						<article class="card-training" data-anim="fade-up">
+							<img class="card-training__icon" src="img/services/icon-brain.svg" alt="" width="40" height="40" aria-hidden="true">
+							<div class="card-training__body">
+								<h3 class="card-training__title">Communication &amp; Conflict</h3>
+								<p class="card-training__text">18+ programs available</p>
+							</div>
+						</article>
+						<article class="card-training" data-anim="fade-up">
+							<img class="card-training__icon" src="img/services/icon-brain.svg" alt="" width="40" height="40" aria-hidden="true">
+							<div class="card-training__body">
+								<h3 class="card-training__title">HR &amp; Management</h3>
+								<p class="card-training__text">21+ programs available</p>
+							</div>
+						</article>
+						<article class="card-training" data-anim="fade-up">
+							<img class="card-training__icon" src="img/services/icon-brain.svg" alt="" width="40" height="40" aria-hidden="true">
+							<div class="card-training__body">
+								<h3 class="card-training__title">Cultural &amp; Indigenous</h3>
+								<p class="card-training__text">15+ programs available</p>
+							</div>
+						</article>
+						<article class="card-training" data-anim="fade-up">
+							<img class="card-training__icon" src="img/services/icon-brain.svg" alt="" width="40" height="40" aria-hidden="true">
+							<div class="card-training__body">
+								<h3 class="card-training__title">Coaching &amp; Supervision Skills</h3>
+								<p class="card-training__text">11+ programs available</p>
+							</div>
+						</article>
+					</div>
+
+					<div class="training-programs__actions" data-anim="fade-up">
+						<a href="training-calendar.html" class="btn btn_primary">Training Directory &amp; Calendar</a>
+						<a href="training-overview.html" class="btn btn_link">
+							View Training Overview
+							<svg aria-hidden="true">
+								<use href="img/icons/icons.svg#svg-arrow-circle-right"></use>
+							</svg>
+						</a>
+					</div>
+					<p class="training-programs__note" data-anim="fade-up">View our full training catalogue including dates, locations and pricing</p>
+				</div>
+			</section>
+
+			<!-- ================================================= TESTIMONIALS -->
+			<section class="testimonial">
+				<div class="testimonial__inner container">
+					<div class="testimonial__slider" data-slider data-anim="fade-up">
+						<div class="testimonial__track" data-slider-track>
+							<article class="testimonial__slide">
+								<div class="testimonial__card">
+									<picture><source srcset="img/common/testimonial-avatar.webp" type="image/webp"><img class="testimonial__avatar" src="img/common/testimonial-avatar.png" alt="Sarah Jenkins" width="224" height="224"></picture>
+									<div class="testimonial__body">
+										<p class="testimonial__quote">&ldquo;Our experience with Amovita has been truly transformative. Our organization operates in a complex environment that requires deep industry expertise, and their team adapted seamlessly to our specific needs. Their insight into leadership and systems is outstanding, and the support we receive is always personalized and proactive.&rdquo;</p>
+										<div class="testimonial__person">
+											<p class="testimonial__name">Sarah Jenkins</p>
+											<p class="testimonial__role">Chief People Officer, Global Logistics Corp.</p>
+										</div>
+									</div>
+								</div>
+							</article>
+
+							<article class="testimonial__slide">
+								<div class="testimonial__card">
+									<picture><source srcset="img/common/testimonial-avatar.webp" type="image/webp"><img class="testimonial__avatar" src="img/common/testimonial-avatar.png" alt="James Whitfield" width="224" height="224"></picture>
+									<div class="testimonial__body">
+										<p class="testimonial__quote">&ldquo;Amovita&rsquo;s team brought clarity to a period of significant change for us. Their strategic guidance was practical, evidence-based and delivered with genuine care. We came away with a stronger leadership team and a clear roadmap for the years ahead.&rdquo;</p>
+										<div class="testimonial__person">
+											<p class="testimonial__name">James Whitfield</p>
+											<p class="testimonial__role">Managing Director, Horizon Health</p>
+										</div>
+									</div>
+								</div>
+							</article>
+
+							<article class="testimonial__slide">
+								<div class="testimonial__card">
+									<picture><source srcset="img/common/testimonial-avatar.webp" type="image/webp"><img class="testimonial__avatar" src="img/common/testimonial-avatar.png" alt="Priya Nair" width="224" height="224"></picture>
+									<div class="testimonial__body">
+										<p class="testimonial__quote">&ldquo;Working with Amovita reshaped how our leaders think about performance and wellbeing. The coaching was deeply personalised, and their supervision model gave our managers the confidence to lead with empathy and consistency.&rdquo;</p>
+										<div class="testimonial__person">
+											<p class="testimonial__name">Priya Nair</p>
+											<p class="testimonial__role">Head of People &amp; Culture, Meridian Group</p>
+										</div>
+									</div>
+								</div>
+							</article>
+						</div>
+
+						<button type="button" class="btn btn_round btn_round_sm testimonial__nav testimonial__nav_prev" data-slider-prev aria-label="Previous testimonial">
+							<svg aria-hidden="true">
+								<use href="img/icons/icons.svg#svg-chevron-left"></use>
+							</svg>
+						</button>
+						<button type="button" class="btn btn_round btn_round_sm testimonial__nav testimonial__nav_next" data-slider-next aria-label="Next testimonial">
+							<svg aria-hidden="true">
+								<use href="img/icons/icons.svg#svg-chevron-right"></use>
+							</svg>
+						</button>
+					</div>
+
+					<span class="testimonial__strip" aria-hidden="true"></span>
+				</div>
+			</section>
+
+			<!-- ==================================================== EAP CTA -->
+			<section class="eap-cta">
+				<div class="eap-cta__inner container">
+					<div class="eap-cta__content" data-anim-stagger="90">
+						<div class="eap-cta__intro">
+							<span class="label" data-anim="fade-up"><span class="label__dot" aria-hidden="true"></span>Get Started</span>
+							<h2 class="eap-cta__title" data-anim="fade-up">Set up EAp for your organistion</h2>
+							<p class="eap-cta__text" data-anim="fade-up">Whether you&rsquo;re looking to set up an EAP for the first time, switch providers, or expand your existing program &mdash; we&rsquo;d love to talk through your needs.</p>
+						</div>
+
+						<div class="eap-cta__contact">
+							<p class="eap-cta__contact-label" data-anim="fade-up">Contact Us</p>
+							<div class="eap-cta__contact-list" data-anim="fade-up">
+								<div class="eap-cta__contact-item">
+									<svg class="eap-cta__contact-icon" aria-hidden="true">
+										<use href="img/icons/icons.svg#svg-mail"></use>
+									</svg>
+									<a href="mailto:info@amovita.com.au" class="eap-cta__contact-link">info@amovita.com.au</a>
+								</div>
+								<div class="eap-cta__contact-item">
+									<svg class="eap-cta__contact-icon" aria-hidden="true">
+										<use href="img/icons/icons.svg#svg-phone"></use>
+									</svg>
+									<a href="tel:+61490049906" class="eap-cta__contact-link">0490 049 906</a>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<form class="eap-enquiry-form" action="#" method="post" data-anim="fade-up" data-anim-delay="140">
+						<h3 class="eap-enquiry-form__title">Submit a service enquiry</h3>
+
+						<div class="eap-enquiry-form__row">
+							<div class="eap-enquiry-form__field">
+								<input type="text" class="eap-enquiry-form__input" name="first_name" placeholder="First name*" aria-label="First name" required>
+							</div>
+							<div class="eap-enquiry-form__field">
+								<input type="text" class="eap-enquiry-form__input" name="last_name" placeholder="Last name*" aria-label="Last name" required>
+							</div>
+						</div>
+
+						<div class="eap-enquiry-form__row">
+							<div class="eap-enquiry-form__field">
+								<input type="text" class="eap-enquiry-form__input" name="job_title" placeholder="Job title*" aria-label="Job title" required>
+							</div>
+							<div class="eap-enquiry-form__field">
+								<input type="text" class="eap-enquiry-form__input" name="organisation_name" placeholder="Organisation name*" aria-label="Organisation name" required>
+							</div>
+						</div>
+
+						<div class="eap-enquiry-form__row">
+							<div class="eap-enquiry-form__field">
+								<input type="email" class="eap-enquiry-form__input" name="email" placeholder="Email*" aria-label="Email address" required>
+							</div>
+							<div class="eap-enquiry-form__field">
+								<input type="tel" class="eap-enquiry-form__input" name="phone" placeholder="Phone number*" aria-label="Phone number" required>
+							</div>
+						</div>
+
+						<div class="eap-enquiry-form__row">
+							<div class="eap-enquiry-form__field">
+								<select class="eap-enquiry-form__select" name="employees" aria-label="Number of employees" required>
+									<option value="" disabled selected>Number of employees*</option>
+									<option value="1-10">1&ndash;10</option>
+									<option value="11-50">11&ndash;50</option>
+									<option value="51-200">51&ndash;200</option>
+									<option value="201-500">201&ndash;500</option>
+									<option value="500+">500+</option>
+								</select>
+							</div>
+						</div>
+
+						<div class="eap-enquiry-form__row">
+							<div class="eap-enquiry-form__field">
+								<select class="eap-enquiry-form__select" name="enquiry_type" aria-label="What are you looking for?">
+									<option value="" disabled selected>What are you looking for?</option>
+									<option value="eap-setup">Setting up a new EAP</option>
+									<option value="eap-switch">Switching EAP providers</option>
+									<option value="eap-expand">Expanding an existing program</option>
+									<option value="general">General enquiry</option>
+								</select>
+							</div>
+						</div>
+
+						<div class="eap-enquiry-form__row">
+							<div class="eap-enquiry-form__field">
+								<textarea class="eap-enquiry-form__textarea" name="message" placeholder="Tell us about your needs" aria-label="Tell us about your needs"></textarea>
+							</div>
+						</div>
+
+						<button type="submit" class="btn btn_primary eap-enquiry-form__submit">Submit EAP Enquiry</button>
+						<p class="eap-enquiry-form__note">We respond within 1 business day. Your details are protected by our <a href="#">Privacy Policy</a>.</p>
+					</form>
+				</div>
+			</section>
+
+		</main>
+		<footer class="footer">
+			<img class="footer__wave" src="img/common/wave-cream.svg" alt="" aria-hidden="true">
+
+			<div class="footer__container">
+				<div class="footer__cta">
+					<h2 class="footer__cta-title">Let&rsquo;s build your <em>strategy together</em></h2>
+					<a href="#" class="btn btn_primary">Start a conversation</a>
+				</div>
+
+				<span class="footer__divider" aria-hidden="true"></span>
+
+				<div class="footer__columns">
+					<div class="footer__left">
+						<div class="footer__brand">
+							<a href="index.html" class="footer__logo" aria-label="Amovita International — home">
+								<img src="img/common/logo-white-footer.svg" alt="Amovita International" width="92" height="96">
+							</a>
+							<div class="footer__badge">
+								<picture><source srcset="img/common/awards-badge.webp" type="image/webp"><img src="img/common/awards-badge.png" alt="ABA Emerging Leader Awards" width="78" height="53"></picture>
+							</div>
+						</div>
+
+						<div class="footer__news">
+							<h3 class="footer__news-title">Stay up to date with Amovita</h3>
+							<p class="footer__news-text">Subscribe for insights, news, updates on our services, training programs, and upcoming events.</p>
+						</div>
+
+						<form class="footer__form form-email" action="#" method="post">
+							<input type="email" class="form-email__input" name="email" placeholder="Enter your email address" aria-label="Email address">
+							<button type="submit" class="form-email__submit btn btn_round" aria-label="Subscribe">
+								<svg aria-hidden="true">
+									<use href="img/icons/icons.svg#svg-arrow-right"></use>
+								</svg>
+							</button>
+						</form>
+
+						<p class="footer__recaptcha">This site is protected by reCAPTHCA and Google <a href="#" class="footer__recaptcha-link">Privacy Policy</a> and <a href="#" class="footer__recaptcha-link">Terms of Service</a> apply.</p>
+					</div>
+
+					<div class="footer__right">
+						<div class="footer__nav">
+							<div class="footer__nav-col">
+								<p class="footer__nav-head"><span class="footer__nav-bullet" aria-hidden="true"></span>Quick Links<span class="footer__nav-toggle" aria-hidden="true"></span></p>
+								<ul class="footer__nav-list">
+									<li><a href="index.html" class="footer__nav-link">Home</a></li>
+									<li><a href="about.html" class="footer__nav-link">About</a></li>
+									<li><a href="our-people.html" class="footer__nav-link">Our people</a></li>
+									<li><a href="services.html" class="footer__nav-link">Services</a></li>
+									<li><a href="training-overview.html" class="footer__nav-link">Training</a></li>
+									<li><a href="who-we-help.html" class="footer__nav-link">Who We Help</a></li>
+									<li><a href="publications.html" class="footer__nav-link">Publications</a></li>
+									<li><a href="contact.html" class="footer__nav-link">Talk To Us</a></li>
+								</ul>
+							</div>
+
+							<div class="footer__nav-col">
+								<p class="footer__nav-head"><span class="footer__nav-bullet" aria-hidden="true"></span>Services<span class="footer__nav-toggle" aria-hidden="true"></span></p>
+								<ul class="footer__nav-list">
+									<li><a href="service-details.html" class="footer__nav-link">Strategic Consulting</a></li>
+									<li><a href="service-details.html" class="footer__nav-link">Coaching &amp; Supervision</a></li>
+									<li><a href="service-details.html" class="footer__nav-link">Organisational Design</a></li>
+									<li><a href="service-details.html" class="footer__nav-link">EAP Services</a></li>
+									<li><a href="service-details.html" class="footer__nav-link">Workplace Investigation</a></li>
+									<li><a href="service-details.html" class="footer__nav-link">Meditation</a></li>
+									<li><a href="service-details.html" class="footer__nav-link">Training</a></li>
+									<li><a href="service-details.html" class="footer__nav-link">Executive Services</a></li>
+								</ul>
+							</div>
+
+							<div class="footer__nav-col">
+								<p class="footer__nav-head"><span class="footer__nav-bullet" aria-hidden="true"></span>Follow Us<span class="footer__nav-toggle" aria-hidden="true"></span></p>
+								<ul class="footer__nav-list">
+									<li><a href="#" class="footer__nav-link">Instagram</a></li>
+									<li><a href="#" class="footer__nav-link">Facebook</a></li>
+									<li><a href="#" class="footer__nav-link">Linkedin</a></li>
+								</ul>
+							</div>
+						</div>
+
+						<div class="footer__ack">
+							<div class="footer__flags">
+								<picture><source srcset="img/common/flag-aboriginal.webp" type="image/webp"><img class="footer__flag" src="img/common/flag-aboriginal.png" alt="Aboriginal flag" width="56" height="36"></picture>
+								<picture><source srcset="img/common/flag-tsi.webp" type="image/webp"><img class="footer__flag" src="img/common/flag-tsi.png" alt="Torres Strait Islander flag" width="56" height="36"></picture>
+							</div>
+							<div class="footer__ack-text">
+								<h4 class="footer__ack-title">Acknowledgement of Country</h4>
+								<p class="footer__ack-body">Amovita International acknowledges the Traditional Owners and Custodians of Country throughout Australia and their continuing connection to land, sea and community. We pay our respects to them and their cultures, and to Elders past, present, and emerging. We acknowledge community members who may be reviewing information on our website &mdash; welcome.</p>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<span class="footer__divider" aria-hidden="true"></span>
+
+				<div class="footer__bottom">
+					<p class="footer__copy">&copy; 2026 Amovita International Pty Ltd. All rights reserved.</p>
+					<ul class="footer__legal">
+						<li><a href="#" class="footer__legal-link">Privacy Policy</a></li>
+						<li><a href="#" class="footer__legal-link">Terms &amp; Conditions</a></li>
+						<li><a href="#" class="footer__legal-link">Sitemap</a></li>
+					</ul>
+				</div>
+			</div>
+		</footer>
+
+	</div>
+	<script src="js/main.js?_v=20260722041947"></script>
+</body>
+
+</html>

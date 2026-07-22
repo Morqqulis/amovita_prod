@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>Our People — Amovita</title>
+	<meta charset="UTF-8">
+	<meta name="format-detection" content="telephone=no">
+	<!-- <meta http-equiv="Content-Security-Policy"
+         content="default-src 'self' data: blob:; font-src 'self' data: blob: https:; style-src 'self' 'unsafe-inline' data:; script-src 'self' 'unsafe-inline' 'unsafe-eval' blob:; img-src 'self' data: blob: https:; connect-src 'self' ws: wss:"> -->
+
+	<link rel="shortcut icon" href="favicon.ico">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<!-- Fonts: Playfair Display (400, 600, 600i) + Inter Tight (400, 500, 600, 700, 400i) -->
+	<!-- Playfair 400 (Regular) drives the interior-page lede paragraphs (about/services/
+        contact/our-people/who-we-help/training/industry/service-details/publications/
+        profile); without it those ledes fell back to the 600 face and rendered too heavy. -->
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Playfair+Display:ital,wght@0,400;0,600;1,600&display=swap&_v=20260722041947">
+
+	<!-- Motion layer switch. Runs before the page paints, so elements that
+        animate in start hidden instead of flashing into place first. With
+        scripts off this line never runs and nothing is ever hidden — see
+        the header of scss/project/motion.scss for the full contract. -->
+	<script>
+		document.documentElement.classList.add('anim');
+	</script>
+
+	<link rel="stylesheet" href="css/main.css?_v=20260722041947">
+</head>
+
+<body class="page-our-people">
+	<div class="wrapper">
+		<header class="header">
+			<div class="header__container">
+				<a href="index.html" class="header__logo" aria-label="Amovita — home">
+					<img class="header__logo-img header__logo-img_dark" src="img/common/logo-dark.svg" alt="" width="134" height="116">
+					<img class="header__logo-img header__logo-img_light" src="img/common/logo-white.svg" alt="" width="134" height="116">
+				</a>
+
+				<nav class="header__nav" aria-label="Primary">
+					<div class="header__panel-top">
+						<a href="index.html" class="header__panel-logo" aria-label="Amovita — home">
+							<img src="img/common/logo-white.svg" alt="" width="134" height="116">
+						</a>
+						<button type="button" class="header__close" aria-label="Close menu">
+							<svg aria-hidden="true">
+								<use href="img/icons/icons.svg#svg-close"></use>
+							</svg>
+						</button>
+					</div>
+					<ul class="header__menu">
+						<li class="header__item header__item_about">
+							<a href="about.html" class="header__link">About Us</a>
+						</li>
+						<li class="header__item header__item_has-drop header__item_services">
+							<button type="button" class="header__link header__toggle" aria-expanded="false" aria-haspopup="true">
+								Services
+								<svg class="header__caret" aria-hidden="true">
+									<use href="img/icons/icons.svg#svg-caret-down"></use>
+								</svg>
+							</button>
+							<div class="header__drop">
+								<ul class="header__submenu">
+									<li><a href="service-details.html" class="header__sublink">Strategic Consulting</a></li>
+									<li><a href="service-details.html" class="header__sublink">Coaching &amp; Supervision</a></li>
+									<li><a href="service-details.html" class="header__sublink">Organisational Design</a></li>
+									<li><a href="service-details.html" class="header__sublink">EAP Services</a></li>
+									<li><a href="service-details.html" class="header__sublink">Workplace Investigation</a></li>
+									<li><a href="service-details.html" class="header__sublink">Mediation</a></li>
+									<li><a href="service-details.html" class="header__sublink">Executive Services</a></li>
+								</ul>
+							</div>
+						</li>
+						<li class="header__item header__item_has-drop header__item_training">
+							<button type="button" class="header__link header__toggle" aria-expanded="false" aria-haspopup="true">
+								Training
+								<svg class="header__caret" aria-hidden="true">
+									<use href="img/icons/icons.svg#svg-caret-down"></use>
+								</svg>
+							</button>
+							<div class="header__drop">
+								<ul class="header__submenu">
+									<li><a href="training-overview.html" class="header__sublink">Training Overview</a></li>
+									<li><a href="training-calendar.html" class="header__sublink">Training Calendar</a></li>
+									<li><a href="training-overview.html" class="header__sublink">Training Directory</a></li>
+								</ul>
+							</div>
+						</li>
+						<li class="header__item header__item_has-drop header__item_who">
+							<button type="button" class="header__link header__toggle" aria-expanded="false" aria-haspopup="true">
+								Who We help
+								<svg class="header__caret" aria-hidden="true">
+									<use href="img/icons/icons.svg#svg-caret-down"></use>
+								</svg>
+							</button>
+							<div class="header__drop">
+								<ul class="header__submenu">
+									<li><a href="industry-detail.html" class="header__sublink">Construction &amp; Property</a></li>
+									<li><a href="industry-detail.html" class="header__sublink">Manufacturing &amp; Industrial</a></li>
+									<li><a href="industry-detail.html" class="header__sublink">Mining &amp; Resources</a></li>
+									<li><a href="industry-detail.html" class="header__sublink">Transport &amp; Logistics</a></li>
+								</ul>
+							</div>
+						</li>
+						<li class="header__item header__item_publications">
+							<a href="publications.html" class="header__link">Publications</a>
+						</li>
+					</ul>
+					<div class="header__panel-foot">
+						<a href="contact.html" class="btn btn_primary header__panel-cta">Talk to us</a>
+					</div>
+				</nav>
+
+				<div class="header__actions">
+					<button type="button" class="header__cart" aria-label="Cart">
+						<svg class="header__cart-icon" aria-hidden="true">
+							<use href="img/icons/icons.svg#svg-cart"></use>
+						</svg>
+					</button>
+					<a href="contact.html" class="btn btn_primary header__cta">Talk to us</a>
+					<button type="button" class="icon-menu header__burger" aria-label="Open menu"><span></span></button>
+				</div>
+			</div>
+		</header>
+
+		<main class="page">
+
+			<!-- ================================================ PEOPLE HERO -->
+			<section class="people-hero">
+				<div class="people-hero__inner container">
+					<div class="people-hero__content" data-anim-stagger="90">
+						<nav class="people-hero__crumbs" aria-label="Breadcrumb" data-anim="fade-up">
+							<a href="index.html" class="people-hero__crumb">Home</a>
+							<span class="people-hero__sep" aria-hidden="true">/</span>
+							<a href="about.html" class="people-hero__crumb">About Us</a>
+							<span class="people-hero__sep" aria-hidden="true">/</span>
+							<span class="people-hero__crumb people-hero__crumb_current">Our People</span>
+						</nav>
+
+						<h1 class="people-hero__title" data-anim="fade-up">Our <em>People</em></h1>
+						<p class="people-hero__lead" data-anim="fade-up">Our team are the best in their field. They are proven professionals selected for their commitment to quality, dedication to development, and entrepreneurial mindset.</p>
+
+						<div class="people-hero__actions" data-anim="fade-up">
+							<a href="contact.html" class="btn btn_primary">Talk to us</a>
+							<a href="services.html" class="btn btn_link people-hero__link">
+								Our Services
+								<svg aria-hidden="true">
+									<use href="img/icons/icons.svg#svg-arrow-circle-right"></use>
+								</svg>
+							</a>
+						</div>
+					</div>
+
+					<!-- The collage rises in after the text column has had its
+                    say (four staggered steps at 90ms = 270ms, so 220 lands
+                    it alongside the last of them, not after a pause), and
+                    the leaf line-art behind the photos drifts on scroll and
+                    toward the pointer — same treatment as the Services and
+                    About heroes. Parallax owns the leaf's transform, so it
+                    carries no data-anim of its own. -->
+					<div class="people-hero__collage" data-anim="fade-up" data-anim-delay="220">
+						<span class="people-hero__deco" aria-hidden="true"></span>
+						<img class="people-hero__swirl" src="img/our-people/leaf-outline-people.svg" alt="" data-parallax="0.05" data-parallax-mouse="12" aria-hidden="true">
+						<picture><source srcset="img/our-people/our-people-hero-1.webp" type="image/webp"><img class="people-hero__photo people-hero__photo_a" src="img/our-people/our-people-hero-1.jpg" alt="Amovita consultants collaborating at a laptop" width="432" height="466"></picture>
+						<picture><source srcset="img/our-people/our-people-hero-2.webp" type="image/webp"><img class="people-hero__photo people-hero__photo_b" src="img/our-people/our-people-hero-2.jpg" alt="Amovita team working together in the office" width="343" height="228"></picture>
+					</div>
+				</div>
+
+				<img class="people-hero__wave" src="img/common/wave-cream.svg" alt="" aria-hidden="true">
+			</section>
+
+			<!-- =================================================== TRUSTEES -->
+			<section class="trustees">
+				<div class="trustees__inner container">
+					<div class="trustees__head" data-anim-stagger="90">
+						<h2 class="trustees__title" data-anim="fade-up">Our Trustees</h2>
+						<p class="trustees__text" data-anim="fade-up">Amovita&rsquo;s board of trustees is made up of committed, effective and generous community leaders who are responsible for safeguarding our mission, policies, assets and grantmaking.</p>
+					</div>
+
+					<!-- Own stagger group, so the twelve portraits run on their
+                    own clock instead of queueing behind the head above.
+                    reveal.js caps the offset at the 7th item (STAGGER_CAP),
+                    so the last card waits 420ms, not 770. -->
+					<div class="trustees__grid" data-anim-stagger="70">
+						<article class="card-team" data-anim="fade-up">
+							<a href="profile.html" class="card-team__link">
+								<picture><source srcset="img/our-people/team-tracey-harris.webp" type="image/webp"><img class="card-team__img" src="img/our-people/team-tracey-harris.jpg" alt="Dr. tracey Harris" width="449" height="545"></picture>
+							</a>
+							<h3 class="card-team__name">Dr. tracey Harris</h3>
+							<p class="card-team__role">Ceo &amp; Director, Executive &amp; Global Services</p>
+							<a href="profile.html" class="btn btn_link card-team__more">
+								View Profile
+								<svg aria-hidden="true">
+									<use href="img/icons/icons.svg#svg-arrow-circle-right"></use>
+								</svg>
+							</a>
+						</article>
+
+						<article class="card-team" data-anim="fade-up">
+							<a href="profile.html" class="card-team__link">
+								<picture><source srcset="img/our-people/team-elyse-leonard.webp" type="image/webp"><img class="card-team__img" src="img/our-people/team-elyse-leonard.jpg" alt="Elyse Leonard" width="449" height="545"></picture>
+							</a>
+							<h3 class="card-team__name">Elyse Leonard</h3>
+							<p class="card-team__role">Practice Coordinator</p>
+							<a href="profile.html" class="btn btn_link card-team__more">
+								View Profile
+								<svg aria-hidden="true">
+									<use href="img/icons/icons.svg#svg-arrow-circle-right"></use>
+								</svg>
+							</a>
+						</article>
+
+						<article class="card-team" data-anim="fade-up">
+							<a href="profile.html" class="card-team__link">
+								<picture><source srcset="img/our-people/team-amanda-vos.webp" type="image/webp"><img class="card-team__img" src="img/our-people/team-amanda-vos.jpg" alt="Amanda Vos" width="449" height="545"></picture>
+							</a>
+							<h3 class="card-team__name">Amanda Vos</h3>
+							<p class="card-team__role">Professional Consultant</p>
+							<a href="profile.html" class="btn btn_link card-team__more">
+								View Profile
+								<svg aria-hidden="true">
+									<use href="img/icons/icons.svg#svg-arrow-circle-right"></use>
+								</svg>
+							</a>
+						</article>
+
+						<article class="card-team" data-anim="fade-up">
+							<a href="profile.html" class="card-team__link">
+								<picture><source srcset="img/our-people/team-claire-day.webp" type="image/webp"><img class="card-team__img" src="img/our-people/team-claire-day.jpg" alt="Claire Day" width="449" height="545"></picture>
+							</a>
+							<h3 class="card-team__name">Claire Day</h3>
+							<p class="card-team__role">Professional Consultant</p>
+							<a href="profile.html" class="btn btn_link card-team__more">
+								View Profile
+								<svg aria-hidden="true">
+									<use href="img/icons/icons.svg#svg-arrow-circle-right"></use>
+								</svg>
+							</a>
+						</article>
+
+						<article class="card-team" data-anim="fade-up">
+							<a href="profile.html" class="card-team__link">
+								<picture><source srcset="img/our-people/team-katie-beamish.webp" type="image/webp"><img class="card-team__img" src="img/our-people/team-katie-beamish.jpg" alt="Katie Beamish" width="449" height="545"></picture>
+							</a>
+							<h3 class="card-team__name">Katie Beamish</h3>
+							<p class="card-team__role">Professional Consultant</p>
+							<a href="profile.html" class="btn btn_link card-team__more">
+								View Profile
+								<svg aria-hidden="true">
+									<use href="img/icons/icons.svg#svg-arrow-circle-right"></use>
+								</svg>
+							</a>
+						</article>
+
+						<article class="card-team" data-anim="fade-up">
+							<a href="profile.html" class="card-team__link">
+								<picture><source srcset="img/our-people/team-alice-cate.webp" type="image/webp"><img class="card-team__img" src="img/our-people/team-alice-cate.jpg" alt="Alice Cate" width="449" height="545"></picture>
+							</a>
+							<h3 class="card-team__name">Alice Cate</h3>
+							<p class="card-team__role">Professional Consultant</p>
+							<a href="profile.html" class="btn btn_link card-team__more">
+								View Profile
+								<svg aria-hidden="true">
+									<use href="img/icons/icons.svg#svg-arrow-circle-right"></use>
+								</svg>
+							</a>
+						</article>
+
+						<article class="card-team" data-anim="fade-up">
+							<a href="profile.html" class="card-team__link">
+								<picture><source srcset="img/our-people/team-vicki-carrick.webp" type="image/webp"><img class="card-team__img" src="img/our-people/team-vicki-carrick.jpg" alt="Vicki Carrick" width="449" height="545"></picture>
+							</a>
+							<h3 class="card-team__name">Vicki Carrick</h3>
+							<p class="card-team__role">Professional Consultant</p>
+							<a href="profile.html" class="btn btn_link card-team__more">
+								View Profile
+								<svg aria-hidden="true">
+									<use href="img/icons/icons.svg#svg-arrow-circle-right"></use>
+								</svg>
+							</a>
+						</article>
+
+						<article class="card-team" data-anim="fade-up">
+							<a href="profile.html" class="card-team__link">
+								<picture><source srcset="img/our-people/team-adrian-nyhuis.webp" type="image/webp"><img class="card-team__img" src="img/our-people/team-adrian-nyhuis.jpg" alt="Adrian Nyhuis" width="449" height="545"></picture>
+							</a>
+							<h3 class="card-team__name">Adrian Nyhuis</h3>
+							<p class="card-team__role">Professional Consultant</p>
+							<a href="profile.html" class="btn btn_link card-team__more">
+								View Profile
+								<svg aria-hidden="true">
+									<use href="img/icons/icons.svg#svg-arrow-circle-right"></use>
+								</svg>
+							</a>
+						</article>
+
+						<article class="card-team" data-anim="fade-up">
+							<a href="profile.html" class="card-team__link">
+								<picture><source srcset="img/our-people/team-sue-lloyd.webp" type="image/webp"><img class="card-team__img" src="img/our-people/team-sue-lloyd.jpg" alt="Sue Lloyd" width="449" height="545"></picture>
+							</a>
+							<h3 class="card-team__name">Sue Lloyd</h3>
+							<p class="card-team__role">Professional Consultant</p>
+							<a href="profile.html" class="btn btn_link card-team__more">
+								View Profile
+								<svg aria-hidden="true">
+									<use href="img/icons/icons.svg#svg-arrow-circle-right"></use>
+								</svg>
+							</a>
+						</article>
+
+						<article class="card-team" data-anim="fade-up">
+							<a href="profile.html" class="card-team__link">
+								<picture><source srcset="img/our-people/team-anne-young.webp" type="image/webp"><img class="card-team__img" src="img/our-people/team-anne-young.jpg" alt="Anne Young" width="449" height="545"></picture>
+							</a>
+							<h3 class="card-team__name">Anne Young</h3>
+							<p class="card-team__role">Professional Consultant</p>
+							<a href="profile.html" class="btn btn_link card-team__more">
+								View Profile
+								<svg aria-hidden="true">
+									<use href="img/icons/icons.svg#svg-arrow-circle-right"></use>
+								</svg>
+							</a>
+						</article>
+
+						<article class="card-team" data-anim="fade-up">
+							<a href="profile.html" class="card-team__link">
+								<picture><source srcset="img/our-people/team-vanessa-bloomfield.webp" type="image/webp"><img class="card-team__img" src="img/our-people/team-vanessa-bloomfield.jpg" alt="Vanessa Bloomfield" width="449" height="545"></picture>
+							</a>
+							<h3 class="card-team__name">Vanessa Bloomfield</h3>
+							<p class="card-team__role">Graphic Design Specialist</p>
+							<a href="profile.html" class="btn btn_link card-team__more">
+								View Profile
+								<svg aria-hidden="true">
+									<use href="img/icons/icons.svg#svg-arrow-circle-right"></use>
+								</svg>
+							</a>
+						</article>
+
+						<article class="card-team" data-anim="fade-up">
+							<a href="profile.html" class="card-team__link">
+								<picture><source srcset="img/our-people/team-james-alley.webp" type="image/webp"><img class="card-team__img" src="img/our-people/team-james-alley.jpg" alt="James Alley" width="449" height="545"></picture>
+							</a>
+							<h3 class="card-team__name">James Alley</h3>
+							<p class="card-team__role">Cultural Consulting Specialist</p>
+							<a href="profile.html" class="btn btn_link card-team__more">
+								View Profile
+								<svg aria-hidden="true">
+									<use href="img/icons/icons.svg#svg-arrow-circle-right"></use>
+								</svg>
+							</a>
+						</article>
+					</div>
+				</div>
+			</section>
+
+			<!-- ==================================================== INSTAGRAM -->
+			<section class="instagram">
+				<div class="instagram__inner container">
+					<!-- Head as one unit and square tiles on `zoom` — the same
+                    treatment this shared section already gets on Home and
+                    About, so the footer-adjacent rhythm reads identically
+                    on every page that carries it. -->
+					<div class="instagram__head" data-anim="fade-up">
+						<h2 class="instagram__title">@amovitainternational</h2>
+						<p class="instagram__text">See what we&rsquo;re up to &mdash; insights, events and inspiration.</p>
+					</div>
+
+					<div class="instagram__grid" data-anim-stagger="70">
+						<a href="#" class="instagram__item" data-anim="zoom"><picture><source srcset="img/common/insta-1.webp" type="image/webp"><img src="img/common/insta-1.jpg" alt="Amovita on Instagram"></picture></a>
+						<a href="#" class="instagram__item" data-anim="zoom"><picture><source srcset="img/common/insta-2.webp" type="image/webp"><img src="img/common/insta-2.jpg" alt="Amovita on Instagram"></picture></a>
+						<a href="#" class="instagram__item" data-anim="zoom"><picture><source srcset="img/common/insta-3.webp" type="image/webp"><img src="img/common/insta-3.jpg" alt="Amovita on Instagram"></picture></a>
+						<a href="#" class="instagram__item" data-anim="zoom"><picture><source srcset="img/common/insta-4.webp" type="image/webp"><img src="img/common/insta-4.jpg" alt="Amovita on Instagram"></picture></a>
+						<a href="#" class="instagram__item" data-anim="zoom"><picture><source srcset="img/common/insta-5.webp" type="image/webp"><img src="img/common/insta-5.jpg" alt="Amovita on Instagram"></picture></a>
+						<a href="#" class="instagram__item" data-anim="zoom"><picture><source srcset="img/common/insta-6.webp" type="image/webp"><img src="img/common/insta-6.jpg" alt="Amovita on Instagram"></picture></a>
+					</div>
+				</div>
+			</section>
+
+		</main>
+		<footer class="footer">
+			<img class="footer__wave" src="img/common/wave-cream.svg" alt="" aria-hidden="true">
+
+			<div class="footer__container">
+				<div class="footer__cta">
+					<h2 class="footer__cta-title">Let&rsquo;s build your <em>strategy together</em></h2>
+					<a href="#" class="btn btn_primary">Start a conversation</a>
+				</div>
+
+				<span class="footer__divider" aria-hidden="true"></span>
+
+				<div class="footer__columns">
+					<div class="footer__left">
+						<div class="footer__brand">
+							<a href="index.html" class="footer__logo" aria-label="Amovita International — home">
+								<img src="img/common/logo-white-footer.svg" alt="Amovita International" width="92" height="96">
+							</a>
+							<div class="footer__badge">
+								<picture><source srcset="img/common/awards-badge.webp" type="image/webp"><img src="img/common/awards-badge.png" alt="ABA Emerging Leader Awards" width="78" height="53"></picture>
+							</div>
+						</div>
+
+						<div class="footer__news">
+							<h3 class="footer__news-title">Stay up to date with Amovita</h3>
+							<p class="footer__news-text">Subscribe for insights, news, updates on our services, training programs, and upcoming events.</p>
+						</div>
+
+						<form class="footer__form form-email" action="#" method="post">
+							<input type="email" class="form-email__input" name="email" placeholder="Enter your email address" aria-label="Email address">
+							<button type="submit" class="form-email__submit btn btn_round" aria-label="Subscribe">
+								<svg aria-hidden="true">
+									<use href="img/icons/icons.svg#svg-arrow-right"></use>
+								</svg>
+							</button>
+						</form>
+
+						<p class="footer__recaptcha">This site is protected by reCAPTHCA and Google <a href="#" class="footer__recaptcha-link">Privacy Policy</a> and <a href="#" class="footer__recaptcha-link">Terms of Service</a> apply.</p>
+					</div>
+
+					<div class="footer__right">
+						<div class="footer__nav">
+							<div class="footer__nav-col">
+								<p class="footer__nav-head"><span class="footer__nav-bullet" aria-hidden="true"></span>Quick Links<span class="footer__nav-toggle" aria-hidden="true"></span></p>
+								<ul class="footer__nav-list">
+									<li><a href="index.html" class="footer__nav-link">Home</a></li>
+									<li><a href="about.html" class="footer__nav-link">About</a></li>
+									<li><a href="our-people.html" class="footer__nav-link">Our people</a></li>
+									<li><a href="services.html" class="footer__nav-link">Services</a></li>
+									<li><a href="training-overview.html" class="footer__nav-link">Training</a></li>
+									<li><a href="who-we-help.html" class="footer__nav-link">Who We Help</a></li>
+									<li><a href="publications.html" class="footer__nav-link">Publications</a></li>
+									<li><a href="contact.html" class="footer__nav-link">Talk To Us</a></li>
+								</ul>
+							</div>
+
+							<div class="footer__nav-col">
+								<p class="footer__nav-head"><span class="footer__nav-bullet" aria-hidden="true"></span>Services<span class="footer__nav-toggle" aria-hidden="true"></span></p>
+								<ul class="footer__nav-list">
+									<li><a href="service-details.html" class="footer__nav-link">Strategic Consulting</a></li>
+									<li><a href="service-details.html" class="footer__nav-link">Coaching &amp; Supervision</a></li>
+									<li><a href="service-details.html" class="footer__nav-link">Organisational Design</a></li>
+									<li><a href="service-details.html" class="footer__nav-link">EAP Services</a></li>
+									<li><a href="service-details.html" class="footer__nav-link">Workplace Investigation</a></li>
+									<li><a href="service-details.html" class="footer__nav-link">Meditation</a></li>
+									<li><a href="service-details.html" class="footer__nav-link">Training</a></li>
+									<li><a href="service-details.html" class="footer__nav-link">Executive Services</a></li>
+								</ul>
+							</div>
+
+							<div class="footer__nav-col">
+								<p class="footer__nav-head"><span class="footer__nav-bullet" aria-hidden="true"></span>Follow Us<span class="footer__nav-toggle" aria-hidden="true"></span></p>
+								<ul class="footer__nav-list">
+									<li><a href="#" class="footer__nav-link">Instagram</a></li>
+									<li><a href="#" class="footer__nav-link">Facebook</a></li>
+									<li><a href="#" class="footer__nav-link">Linkedin</a></li>
+								</ul>
+							</div>
+						</div>
+
+						<div class="footer__ack">
+							<div class="footer__flags">
+								<picture><source srcset="img/common/flag-aboriginal.webp" type="image/webp"><img class="footer__flag" src="img/common/flag-aboriginal.png" alt="Aboriginal flag" width="56" height="36"></picture>
+								<picture><source srcset="img/common/flag-tsi.webp" type="image/webp"><img class="footer__flag" src="img/common/flag-tsi.png" alt="Torres Strait Islander flag" width="56" height="36"></picture>
+							</div>
+							<div class="footer__ack-text">
+								<h4 class="footer__ack-title">Acknowledgement of Country</h4>
+								<p class="footer__ack-body">Amovita International acknowledges the Traditional Owners and Custodians of Country throughout Australia and their continuing connection to land, sea and community. We pay our respects to them and their cultures, and to Elders past, present, and emerging. We acknowledge community members who may be reviewing information on our website &mdash; welcome.</p>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<span class="footer__divider" aria-hidden="true"></span>
+
+				<div class="footer__bottom">
+					<p class="footer__copy">&copy; 2026 Amovita International Pty Ltd. All rights reserved.</p>
+					<ul class="footer__legal">
+						<li><a href="#" class="footer__legal-link">Privacy Policy</a></li>
+						<li><a href="#" class="footer__legal-link">Terms &amp; Conditions</a></li>
+						<li><a href="#" class="footer__legal-link">Sitemap</a></li>
+					</ul>
+				</div>
+			</div>
+		</footer>
+
+	</div>
+	<script src="js/main.js?_v=20260722041947"></script>
+</body>
+
+</html>
