@@ -2276,10 +2276,8 @@ em {
   overflow: hidden;
   color: #fff;
   background-color: #17254c;
+  --hero-photo: url('../img/home/hero-bg.jpg');
 }
-
-.no-webp .hero__bg {
-  background: url("../img/home/hero-bg.jpg") center/cover no-repeat; }
 
 .hero__bg {
   position: absolute;
@@ -2288,6 +2286,24 @@ em {
   z-index: 0;
   width: 108%;
   height: 124%;
+  background: var(--hero-photo) center/cover no-repeat;
+}
+
+.hero__flute {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+  opacity: 0;
+  -webkit-transition: opacity .45s ease;
+  transition: opacity .45s ease;
+  pointer-events: none;
+}
+
+.hero__flute.is-ready {
+  opacity: 1;
 }
 
 .hero::before {
@@ -15292,6 +15308,10 @@ em {
             animation: none;
   }
 
+  .hero__flute {
+    opacity: 0 !important;
+  }
+
   .service-row__panel,
   .service-row__toggle,
   .service-row__toggle::before,
@@ -15320,8 +15340,6 @@ em {
 }
 
 .webp .footer__cta::before { background: url(../img/common/footer-leaf.webp) no-repeat center/100% 100%; }
-
-.webp .hero__bg { background: url(../img/home/hero-bg.webp) center/cover no-repeat; }
 
 .webp .testimonial__slider { background: url(../img/common/testimonial-bg.webp) center/cover no-repeat; }
 
