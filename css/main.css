@@ -10846,6 +10846,8 @@ em {
           flex-direction: column;
   gap: 3rem;
   width: 100%;
+  max-width: 73.5rem;
+  margin-inline: auto;
 }
 
 .industry-content__heading {
@@ -14489,6 +14491,10 @@ em {
 
   .industry-checklist_compact {
     gap: 0;
+  }
+
+  .industry-checklist__col:not(:last-child) .industry-checklist__item:last-child {
+    border-bottom: 0;
   }
 
   .industry-form {
