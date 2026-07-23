@@ -22,7 +22,7 @@
         profile); without it those ledes fell back to the 600 face and rendered too heavy. -->
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Playfair+Display:ital,wght@0,400;0,600;1,600&display=swap&_v=20260722045433">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Playfair+Display:ital,wght@0,400;0,600;1,600&display=swap&_v=20260723052931">
 
 	<!-- Motion layer switch. Runs before the page paints, so elements that
         animate in start hidden instead of flashing into place first. With
@@ -32,7 +32,7 @@
 		document.documentElement.classList.add('anim');
 	</script>
 
-	<link rel="stylesheet" href="css/main.css?_v=20260722045433">
+	<link rel="stylesheet" href="css/main.css?_v=20260723052931">
 </head>
 
 <body class="page-training-calendar">
@@ -371,6 +371,141 @@
 			</section>
 
 		</main>
+		<!-- ===================================================================
+     PROGRAM DETAIL — dialog opened by "View program detail" on a
+     training card (Figma node 344:7126, 1317x916: an 837px content
+     column, a 480px sidebar and an 84px footer bar).
+
+     There is ONE dialog on the page and it is filled from whichever card
+     was clicked — title, duration, price and the course summary are read
+     straight out of that card's own markup, so every programme shows its
+     real data and nothing is duplicated. See js/files/program-modal.js.
+
+     CONTENT FLAG — the design supplies only one worked example, so the
+     module list, the "Suitable For" tags, the two delivery options with
+     their prices, the in-house note and the cancellation policy are the
+     same for every programme. The client owes us per-programme values.
+=================================================================== -->
+		<div class="program-modal" data-program-modal hidden>
+			<div class="program-modal__scrim" data-modal-close></div>
+
+			<!-- tabindex="-1" so opening can park focus on the dialog itself:
+        focusing the first CONTROL instead made the browser draw its focus
+        ring on "Close" every time the dialog was opened with a mouse. -->
+			<div class="program-modal__dialog" role="dialog" aria-modal="true" aria-labelledby="program-modal-title" tabindex="-1">
+				<div class="program-modal__body">
+
+					<!-- LEFT: the programme itself -->
+					<div class="program-modal__main">
+						<span class="label program-modal__kind"><span class="label__dot" aria-hidden="true"></span>Professional Training</span>
+
+						<h2 class="program-modal__title" id="program-modal-title" data-modal-title></h2>
+
+						<div class="program-modal__chips" data-modal-chips></div>
+
+						<section class="program-modal__section">
+							<h3 class="program-modal__heading">About This Course</h3>
+							<p class="program-modal__text" data-modal-about></p>
+						</section>
+
+						<section class="program-modal__section">
+							<h3 class="program-modal__heading">Training Modules</h3>
+							<ol class="program-modal__modules">
+								<li class="program-modal__module">Understanding Conflictual Situations</li>
+								<li class="program-modal__module">Navigating Conflictual Situations</li>
+								<li class="program-modal__module">Leading Constructive Conversations</li>
+								<li class="program-modal__module">Understanding Self for Higher Impact</li>
+								<li class="program-modal__module">Mastering Decision Making</li>
+								<li class="program-modal__module">Influencing Others to Help</li>
+							</ol>
+						</section>
+					</div>
+
+					<!-- RIGHT: booking sidebar -->
+					<aside class="program-modal__side">
+						<button type="button" class="program-modal__close" data-modal-close>
+							Close
+							<svg aria-hidden="true">
+								<use href="img/icons/icons.svg#svg-close"></use>
+							</svg>
+						</button>
+
+						<section class="program-modal__side-block">
+							<h3 class="program-modal__side-title">Suitable For</h3>
+							<ul class="program-modal__tags">
+								<li class="program-modal__tag">Leaders</li>
+								<li class="program-modal__tag">Managers</li>
+								<li class="program-modal__tag">CEOs</li>
+								<li class="program-modal__tag">Executives</li>
+								<li class="program-modal__tag">HR Professionals</li>
+							</ul>
+						</section>
+
+						<section class="program-modal__side-block">
+							<h3 class="program-modal__side-title">Delivery &amp; Investment</h3>
+
+							<label class="program-modal__option">
+								<input type="radio" name="program-delivery" value="face-to-face" class="program-modal__radio" checked>
+								<span class="program-modal__option-body">
+									<span class="program-modal__option-name">Face to Face</span>
+									<span class="program-modal__option-note">3 Day Program</span>
+								</span>
+								<span class="program-modal__option-price">$1,250</span>
+							</label>
+
+							<label class="program-modal__option">
+								<input type="radio" name="program-delivery" value="online" class="program-modal__radio">
+								<span class="program-modal__option-body">
+									<span class="program-modal__option-name">Online</span>
+									<span class="program-modal__option-note">3 Day Program</span>
+								</span>
+								<span class="program-modal__option-price">$1,250</span>
+							</label>
+
+							<p class="program-modal__fine">All public training includes: course fees, manual, materials, handouts &amp; catering. Certificate of attendance issued on completion.</p>
+						</section>
+
+						<div class="program-modal__actions">
+							<a href="contact.html" class="btn btn_primary program-modal__cta">Enquire Now</a>
+							<a href="training-calendar.html" class="btn btn_outline program-modal__cta">Check Training Calendar</a>
+						</div>
+
+						<section class="program-modal__side-block program-modal__side-block_bordered">
+							<h3 class="program-modal__side-title program-modal__side-title_sm">In-House Training Available</h3>
+							<p class="program-modal__fine">We can deliver this course at your workplace for your team. Contact us for a customised in-house quote.</p>
+						</section>
+
+						<section class="program-modal__side-block program-modal__side-block_bordered">
+							<h3 class="program-modal__side-title program-modal__side-title_sm">Cancellation Policy</h3>
+							<p class="program-modal__fine">31+ days prior: no fee . 16&ndash;30 days: 40&ndash;75% fee . Under 15 days: 85&ndash;100% fee.
+								<a href="#" class="program-modal__policy-link">Full policy
+									<svg aria-hidden="true">
+										<use href="img/icons/icons.svg#svg-arrow-right"></use>
+									</svg>
+								</a>
+							</p>
+						</section>
+					</aside>
+				</div>
+
+				<!-- Step between programmes without closing the dialog -->
+				<footer class="program-modal__nav">
+					<button type="button" class="program-modal__nav-btn" data-modal-prev>
+						<svg aria-hidden="true">
+							<use href="img/icons/icons.svg#svg-arrow-circle-left"></use>
+						</svg>
+						Previous
+					</button>
+					<button type="button" class="program-modal__nav-btn program-modal__nav-btn_next" data-modal-next>
+						Next
+						<svg aria-hidden="true">
+							<use href="img/icons/icons.svg#svg-arrow-circle-right"></use>
+						</svg>
+					</button>
+				</footer>
+			</div>
+		</div>
+
 		<footer class="footer">
 			<img class="footer__wave" src="img/common/wave-cream.svg" alt="" aria-hidden="true">
 
@@ -477,7 +612,7 @@
 		</footer>
 
 	</div>
-	<script src="js/main.js?_v=20260722045433"></script>
+	<script src="js/main.js?_v=20260723052931"></script>
 </body>
 
 </html>
