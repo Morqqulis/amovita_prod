@@ -22,7 +22,7 @@
         profile); without it those ledes fell back to the 600 face and rendered too heavy. -->
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Playfair+Display:ital,wght@0,400;0,600;1,600&display=swap&_v=20260724041845">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Playfair+Display:ital,wght@0,400;0,600;1,600&display=swap&_v=20260725000954">
 
 	<!-- Motion layer switch. Runs before the page paints, so elements that
         animate in start hidden instead of flashing into place first. With
@@ -32,7 +32,7 @@
 		document.documentElement.classList.add('anim');
 	</script>
 
-	<link rel="stylesheet" href="css/main.css?_v=20260724041845">
+	<link rel="stylesheet" href="css/main.css?_v=20260725000954">
 </head>
 
 <body class="page-home">
@@ -502,13 +502,26 @@
 						<p class="instagram__text">See what we&rsquo;re up to &mdash; insights, events and inspiration.</p>
 					</div>
 
-					<div class="instagram__grid" data-anim-stagger="70">
-						<a href="#" class="instagram__item" data-anim="zoom"><picture><source srcset="img/common/insta-1.webp" type="image/webp"><img src="img/common/insta-1.jpg" alt="Amovita on Instagram"></picture></a>
-						<a href="#" class="instagram__item" data-anim="zoom"><picture><source srcset="img/common/insta-2.webp" type="image/webp"><img src="img/common/insta-2.jpg" alt="Amovita on Instagram"></picture></a>
-						<a href="#" class="instagram__item" data-anim="zoom"><picture><source srcset="img/common/insta-3.webp" type="image/webp"><img src="img/common/insta-3.jpg" alt="Amovita on Instagram"></picture></a>
-						<a href="#" class="instagram__item" data-anim="zoom"><picture><source srcset="img/common/insta-4.webp" type="image/webp"><img src="img/common/insta-4.jpg" alt="Amovita on Instagram"></picture></a>
-						<a href="#" class="instagram__item" data-anim="zoom"><picture><source srcset="img/common/insta-5.webp" type="image/webp"><img src="img/common/insta-5.jpg" alt="Amovita on Instagram"></picture></a>
-						<a href="#" class="instagram__item" data-anim="zoom"><picture><source srcset="img/common/insta-6.webp" type="image/webp"><img src="img/common/insta-6.jpg" alt="Amovita on Instagram"></picture></a>
+					<!-- Swiper: autoplaying, looping feed of square cards.
+                    Six unique photos, duplicated once so loop mode has
+                    enough slides for a seamless wrap at every slidesPerView
+                    (the second set is aria-hidden to avoid double-reading).
+                    Init + breakpoints in js/files/sliders.js -->
+					<div class="instagram__slider swiper" data-anim="fade-up">
+						<div class="instagram__track swiper-wrapper">
+							<a href="#" class="instagram__item swiper-slide"><picture><source srcset="img/common/insta-1.webp" type="image/webp"><img src="img/common/insta-1.jpg" alt="Amovita on Instagram"></picture></a>
+							<a href="#" class="instagram__item swiper-slide"><picture><source srcset="img/common/insta-2.webp" type="image/webp"><img src="img/common/insta-2.jpg" alt="Amovita on Instagram"></picture></a>
+							<a href="#" class="instagram__item swiper-slide"><picture><source srcset="img/common/insta-3.webp" type="image/webp"><img src="img/common/insta-3.jpg" alt="Amovita on Instagram"></picture></a>
+							<a href="#" class="instagram__item swiper-slide"><picture><source srcset="img/common/insta-4.webp" type="image/webp"><img src="img/common/insta-4.jpg" alt="Amovita on Instagram"></picture></a>
+							<a href="#" class="instagram__item swiper-slide"><picture><source srcset="img/common/insta-5.webp" type="image/webp"><img src="img/common/insta-5.jpg" alt="Amovita on Instagram"></picture></a>
+							<a href="#" class="instagram__item swiper-slide"><picture><source srcset="img/common/insta-6.webp" type="image/webp"><img src="img/common/insta-6.jpg" alt="Amovita on Instagram"></picture></a>
+							<a href="#" class="instagram__item swiper-slide" aria-hidden="true" tabindex="-1"><picture><source srcset="img/common/insta-1.webp" type="image/webp"><img src="img/common/insta-1.jpg" alt=""></picture></a>
+							<a href="#" class="instagram__item swiper-slide" aria-hidden="true" tabindex="-1"><picture><source srcset="img/common/insta-2.webp" type="image/webp"><img src="img/common/insta-2.jpg" alt=""></picture></a>
+							<a href="#" class="instagram__item swiper-slide" aria-hidden="true" tabindex="-1"><picture><source srcset="img/common/insta-3.webp" type="image/webp"><img src="img/common/insta-3.jpg" alt=""></picture></a>
+							<a href="#" class="instagram__item swiper-slide" aria-hidden="true" tabindex="-1"><picture><source srcset="img/common/insta-4.webp" type="image/webp"><img src="img/common/insta-4.jpg" alt=""></picture></a>
+							<a href="#" class="instagram__item swiper-slide" aria-hidden="true" tabindex="-1"><picture><source srcset="img/common/insta-5.webp" type="image/webp"><img src="img/common/insta-5.jpg" alt=""></picture></a>
+							<a href="#" class="instagram__item swiper-slide" aria-hidden="true" tabindex="-1"><picture><source srcset="img/common/insta-6.webp" type="image/webp"><img src="img/common/insta-6.jpg" alt=""></picture></a>
+						</div>
 					</div>
 				</div>
 			</section>
@@ -620,7 +633,7 @@
 		</footer>
 
 	</div>
-	<script src="js/main.js?_v=20260724041845"></script>
+	<script src="js/main.js?_v=20260725000954"></script>
 </body>
 
 </html>
