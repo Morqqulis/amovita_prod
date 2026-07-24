@@ -2362,15 +2362,15 @@ em {
   font-style: normal;
 }
 
-@supports (font-size: clamp( 2.5rem , 1.6978609626rem  +  4.0106951872vw , 5.3125rem )) {
+@supports (font-size: clamp( 2.75rem , 2.0191622103rem  +  3.6541889483vw , 5.3125rem )) {
   .hero__title {
-    font-size: clamp( 2.5rem , 1.6978609626rem  +  4.0106951872vw , 5.3125rem );
+    font-size: clamp( 2.75rem , 2.0191622103rem  +  3.6541889483vw , 5.3125rem );
   }
 }
 
-@supports not (font-size: clamp( 2.5rem , 1.6978609626rem  +  4.0106951872vw , 5.3125rem )) {
+@supports not (font-size: clamp( 2.75rem , 2.0191622103rem  +  3.6541889483vw , 5.3125rem )) {
   .hero__title {
-    font-size: calc(2.5rem + 2.8125*(100vw - 20rem)/70.125);
+    font-size: calc(2.75rem + 2.5625*(100vw - 20rem)/70.125);
   }
 }
 
@@ -2679,27 +2679,15 @@ em {
   background-color: #e8e1ca;
 }
 
-.logos__row {
-  --logo-cols: 6;
-  --logo-gap: 1rem;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  gap: var(--logo-gap);
+.logos__slider {
   width: 100%;
-  padding-inline: 2rem;
 }
 
 .logos .logo-tile {
   -webkit-box-flex: 0;
-      -ms-flex: 0 0 calc((100% - (var(--logo-cols) - 1)*var(--logo-gap))/var(--logo-cols));
-          flex: 0 0 calc((100% - (var(--logo-cols) - 1)*var(--logo-gap))/var(--logo-cols));
-  max-width: 17.5rem;
+      -ms-flex: 0 0 auto;
+          flex: 0 0 auto;
+  height: 7.5rem;
 }
 
 .services {
@@ -3086,6 +3074,9 @@ em {
   z-index: 3;
   cursor: pointer;
   border: 0;
+  min-height: auto !important;
+  width: 2.75rem !important;
+  height: 2.75rem !important;
 }
 
 @supports (left: clamp( 1rem , -1.25rem  +  4.6875vw , 4rem )) {
@@ -13093,10 +13084,6 @@ em {
 }
 
 @media (max-width: 1023.98px) {
-  .logos__row {
-    --logo-cols: 3;
-  }
-
   .services__grid .card-service {
     width: 50%;
     border: 0;
@@ -13777,25 +13764,36 @@ em {
     max-width: calc(100% - 5rem);
   }
 
-  .logos__head {
-    gap: 0.75rem;
+  .logos {
+    padding: 1.5rem 0 4rem;
   }
 
-@supports (font-size: clamp( 0.75rem , 0.5114503817rem  +  1.0178117048vw , 1rem )) {
-    .logos .label {
-      font-size: clamp( 0.75rem , 0.5114503817rem  +  1.0178117048vw , 1rem );
-    }
-}
+  .logos__inner {
+    gap: 3rem;
+  }
 
-@supports not (font-size: clamp( 0.75rem , 0.5114503817rem  +  1.0178117048vw , 1rem )) {
-    .logos .label {
-      font-size: calc(0.75rem + 0.25*(100vw - 23.4375rem)/24.5625);
-    }
-}
+  .logos__head {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    gap: 3rem;
+  }
+
+  .logos__line:last-child {
+    display: none;
+  }
 
   .logos .label {
-    padding-inline: 0.5rem;
+    font-size: 0.8125rem;
+    letter-spacing: 0.0825rem;
+    padding-inline: 0.75rem;
     text-align: center;
+  }
+
+  .logos .logo-tile {
+    height: 5.375rem;
+    border-radius: 1rem;
   }
 
   .mobile-cards {
@@ -13870,6 +13868,16 @@ em {
     font-size: 3.5rem;
   }
 
+  .hero__actions .btn {
+    font-size: 0.875rem;
+  }
+
+  .hero__actions .btn_primary {
+    min-height: 0;
+    height: 3rem;
+    padding-block: 0;
+  }
+
   .hero__award {
     display: none;
   }
@@ -13889,14 +13897,6 @@ em {
   .who__deco,
   .who__deco-block {
     display: none;
-  }
-
-  .logos {
-    padding: 3rem 0;
-  }
-
-  .logos__row {
-    padding-inline: 0;
   }
 
   .services {
@@ -14005,7 +14005,7 @@ em {
 
   .testimonial__slide {
     padding-inline: 1.5rem;
-    padding-block: 2rem 6.5rem;
+    padding-block: 2.5rem 6.5rem;
   }
 
   .testimonial__card {
@@ -14013,12 +14013,18 @@ em {
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     gap: 2rem;
     padding: 2.5rem 1.5rem;
-    text-align: center;
+    text-align: left;
   }
 
   .testimonial__avatar {
+    -ms-flex-item-align: center;
+        -ms-grid-row-align: center;
+        align-self: center;
     -ms-flex-preferred-size: 10rem;
         flex-basis: 10rem;
     width: 10rem;
@@ -14026,44 +14032,46 @@ em {
   }
 
   .testimonial__body {
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
+    -ms-flex-item-align: stretch;
+        -ms-grid-row-align: stretch;
+        align-self: stretch;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
     max-width: 100%;
+    text-align: left;
   }
 
   .testimonial__person {
     -ms-flex-item-align: stretch;
         -ms-grid-row-align: stretch;
         align-self: stretch;
-    text-align: center;
+    text-align: left;
   }
 
   .testimonial__quote {
-    font-size: 1.25rem;
+    font-size: 1rem;
   }
 
   .testimonial__nav {
     top: auto;
-    bottom: 2rem;
-    -webkit-transform: none;
-        -ms-transform: none;
-            transform: none;
-    min-width: 2.75rem;
-    min-height: 2.75rem !important;
-    height: 2.75rem !important;
-    background-color: rgba(0,0,0,0);
-    border: 1px solid #d9d7bf;
+    bottom: 1.5rem;
   }
 
   .testimonial__nav_prev {
-    left: calc(50% - 3rem);
+    left: 50%;
     right: auto;
+    -webkit-transform: translateX(calc(-100% - 0.25rem));
+        -ms-transform: translateX(calc(-100% - 0.25rem));
+            transform: translateX(calc(-100% - 0.25rem));
   }
 
   .testimonial__nav_next {
-    left: calc(50% + 0.25rem);
+    left: 50%;
     right: auto;
+    -webkit-transform: translateX(0.25rem);
+        -ms-transform: translateX(0.25rem);
+            transform: translateX(0.25rem);
   }
 
   .industries {
@@ -14599,6 +14607,13 @@ em {
   }
 }
 
+@media (max-width: 768.98px) {
+  .hero__wave {
+    height: 2.1875rem;
+    width: 108%;
+  }
+}
+
 @media (max-width: 620px) {
   .about-timeline__top {
     -webkit-box-orient: vertical;
@@ -14664,12 +14679,28 @@ em {
 }
 
 @media (max-width: 599.98px) {
-  .logos__row {
-    --logo-cols: 2;
+  .instagram__grid {
+    -ms-flex-wrap: nowrap;
+        flex-wrap: nowrap;
+    overflow-x: auto;
+    gap: 1rem;
+    margin-inline: -0.9375rem;
+    padding-inline: 0.9375rem;
+    -ms-scroll-snap-type: x mandatory;
+        scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
   }
 
-  .instagram__grid {
-    --insta-cols: 2;
+  .instagram__grid::-webkit-scrollbar {
+    display: none;
+  }
+
+  .instagram__item {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 9rem;
+            flex: 0 0 9rem;
+    scroll-snap-align: center;
   }
 }
 
@@ -14677,15 +14708,6 @@ em {
   .mobile-cards__award {
     gap: 1rem;
     padding: 1rem;
-  }
-
-  .services__grid .card-service {
-    width: 100%;
-    border: 0;
-  }
-
-  .services__grid .card-service:not(:last-child) {
-    border-bottom: 1px solid #e8e1ca;
   }
 
   .numbers__col_1,
@@ -14696,14 +14718,8 @@ em {
             flex: 1 1 100%;
   }
 
-  .numbers__photo_1,
-  .numbers__photo_c {
-    aspect-ratio: 16/9;
-  }
-
   .numbers__photo_tall {
     height: auto;
-    aspect-ratio: 16/9;
   }
 
   .numbers__row {
@@ -14747,14 +14763,16 @@ em {
   }
 
   .hero__actions {
-    -webkit-box-orient: vertical;
+    -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    -webkit-box-align: stretch;
-        -ms-flex-align: stretch;
-            align-items: stretch;
-    gap: 1rem;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    gap: 1rem 1.5rem;
   }
 
   .who__inner {
