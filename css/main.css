@@ -13832,8 +13832,6 @@ em {
   }
 
   .hero {
-    min-height: 100vh;
-    min-height: 100svh;
     padding: 8rem 0 4.5rem;
     -webkit-box-align: stretch;
         -ms-flex-align: stretch;
