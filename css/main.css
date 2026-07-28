@@ -871,6 +871,86 @@
   font-weight: 600;
 }
 
+.header_stuck {
+  position: fixed;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  background-color: #fff;
+  -webkit-box-shadow: 0 0.125rem 1rem rgba(23,37,76,.1);
+          box-shadow: 0 0.125rem 1rem rgba(23,37,76,.1);
+  -webkit-animation: header-drop .35s ease;
+          animation: header-drop .35s ease;
+}
+
+.header_stuck__logo-img {
+  height: 2.75rem;
+}
+
+.header_stuck__nav {
+  height: 3rem;
+}
+
+@-webkit-keyframes header-drop {
+  from {
+    -webkit-transform: translateY(-100%);
+            transform: translateY(-100%);
+  }
+
+  to {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+}
+
+@keyframes header-drop {
+  from {
+    -webkit-transform: translateY(-100%);
+            transform: translateY(-100%);
+  }
+
+  to {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+}
+
+.page-home .header_stuck {
+  color: #17254c;
+}
+
+.page-home .header_stuck .header__logo-img_dark {
+  display: block;
+}
+
+.page-home .header_stuck .header__logo-img_light {
+  display: none;
+}
+
+.page-home .header_stuck .header__nav {
+  background-color: #fff;
+  -webkit-box-shadow: 0 0.125rem 0.875rem rgba(23,37,76,.08);
+          box-shadow: 0 0.125rem 0.875rem rgba(23,37,76,.08);
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+}
+
+.page-home .header_stuck .header__link {
+  color: #17254c;
+}
+
+.page-home .header_stuck .header__item_open>.header__toggle {
+  background-color: rgba(23,37,76,.06);
+}
+
+.page-home .header_stuck .header__cart {
+  color: #17254c;
+  background-color: #fff;
+  -webkit-box-shadow: 0 0.125rem 0.875rem rgba(23,37,76,.08);
+          box-shadow: 0 0.125rem 0.875rem rgba(23,37,76,.08);
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+}
+
 .footer {
   position: relative;
   background-color: #121d3b;
@@ -15278,6 +15358,11 @@ em {
 }
 
 @media (prefers-reduced-motion: reduce) {
+  .header_stuck {
+    -webkit-animation: none;
+            animation: none;
+  }
+
   .program-modal__dialog {
     -webkit-animation: none;
             animation: none;
