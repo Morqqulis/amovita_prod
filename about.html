@@ -22,7 +22,7 @@
         profile); without it those ledes fell back to the 600 face and rendered too heavy. -->
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Playfair+Display:ital,wght@0,400;0,600;1,600&display=swap&_v=20260728194041">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Playfair+Display:ital,wght@0,400;0,600;1,600&display=swap&_v=20260730111826">
 
 	<!-- Motion layer switch. Runs before the page paints, so elements that
         animate in start hidden instead of flashing into place first. With
@@ -32,7 +32,7 @@
 		document.documentElement.classList.add('anim');
 	</script>
 
-	<link rel="stylesheet" href="css/main.css?_v=20260728194041">
+	<link rel="stylesheet" href="css/main.css?_v=20260730111826">
 </head>
 
 <body class="page-about">
@@ -56,8 +56,19 @@
 						</button>
 					</div>
 					<ul class="header__menu">
-						<li class="header__item header__item_about">
-							<a href="about.html" class="header__link">About Us</a>
+						<li class="header__item header__item_has-drop header__item_about">
+							<button type="button" class="header__link header__toggle" aria-expanded="false" aria-haspopup="true">
+								About Us
+								<svg class="header__caret" aria-hidden="true">
+									<use href="img/icons/icons.svg#svg-caret-down"></use>
+								</svg>
+							</button>
+							<div class="header__drop">
+								<ul class="header__submenu">
+									<li><a href="about.html" class="header__sublink">About Us</a></li>
+									<li><a href="our-people.html" class="header__sublink">Our People</a></li>
+								</ul>
+							</div>
 						</li>
 						<li class="header__item header__item_has-drop header__item_services">
 							<button type="button" class="header__link header__toggle" aria-expanded="false" aria-haspopup="true">
@@ -68,13 +79,13 @@
 							</button>
 							<div class="header__drop">
 								<ul class="header__submenu">
-									<li><a href="service-details.html" class="header__sublink">Strategic Consulting</a></li>
-									<li><a href="service-details.html" class="header__sublink">Coaching &amp; Supervision</a></li>
-									<li><a href="service-details.html" class="header__sublink">Organisational Design</a></li>
-									<li><a href="service-details.html" class="header__sublink">EAP Services</a></li>
-									<li><a href="service-details.html" class="header__sublink">Workplace Investigation</a></li>
-									<li><a href="service-details.html" class="header__sublink">Mediation</a></li>
-									<li><a href="service-details.html" class="header__sublink">Executive Services</a></li>
+									<li><a href="services.html#strategic-consulting" class="header__sublink">Strategic Consulting</a></li>
+									<li><a href="services.html#coaching-supervision" class="header__sublink">Coaching &amp; Supervision</a></li>
+									<li><a href="services.html#organisational-design" class="header__sublink">Organisational Design</a></li>
+									<li><a href="services.html#eap-services" class="header__sublink">EAP Services</a></li>
+									<li><a href="services.html#workplace-investigation" class="header__sublink">Workplace Investigation</a></li>
+									<li><a href="services.html#mediation" class="header__sublink">Mediation</a></li>
+									<li><a href="services.html#executive-services" class="header__sublink">Executive Services</a></li>
 								</ul>
 							</div>
 						</li>
@@ -380,16 +391,33 @@
 						<p class="instagram__text">See what we&rsquo;re up to &mdash; insights, events and inspiration.</p>
 					</div>
 
-					<div class="instagram__grid" data-anim-stagger="70">
-						<a href="#" class="instagram__item" data-anim="zoom"><picture><source srcset="img/about/about-insta-1.webp" type="image/webp"><img src="img/about/about-insta-1.jpg" alt="Amovita on Instagram"></picture></a>
-						<a href="#" class="instagram__item about-instagram-quote" data-anim="zoom">
-							<span class="about-instagram-quote__text">&ldquo;Strength comes from resilience, resilience comes from having a sense of self, and sense of self comes from balance.&rdquo;</span>
-							<span class="about-instagram-quote__mark" aria-hidden="true">Amovita</span>
-						</a>
-						<a href="#" class="instagram__item" data-anim="zoom"><picture><source srcset="img/about/about-insta-3.webp" type="image/webp"><img src="img/about/about-insta-3.jpg" alt="Amovita on Instagram"></picture></a>
-						<a href="#" class="instagram__item" data-anim="zoom"><picture><source srcset="img/about/about-insta-4.webp" type="image/webp"><img src="img/about/about-insta-4.jpg" alt="Amovita on Instagram"></picture></a>
-						<a href="#" class="instagram__item" data-anim="zoom"><picture><source srcset="img/about/about-insta-5.webp" type="image/webp"><img src="img/about/about-insta-5.jpg" alt="Amovita on Instagram"></picture></a>
-						<a href="#" class="instagram__item" data-anim="zoom"><picture><source srcset="img/about/about-insta-6.webp" type="image/webp"><img src="img/about/about-insta-6.jpg" alt="Amovita on Instagram"></picture></a>
+					<!-- Swiper: autoplaying, looping feed of square cards (one
+                    slide is the quote card, not a photo). Six unique slides,
+                    duplicated once so loop mode has enough slides for a
+                    seamless wrap at every slidesPerView (the second set is
+                    aria-hidden to avoid double-reading). Init + breakpoints
+                    in js/files/sliders.js — same shared section as Home. -->
+					<div class="instagram__slider swiper" data-anim="fade-up">
+						<div class="instagram__track swiper-wrapper">
+							<a href="#" class="instagram__item swiper-slide"><picture><source srcset="img/about/about-insta-1.webp" type="image/webp"><img src="img/about/about-insta-1.jpg" alt="Amovita on Instagram"></picture></a>
+							<a href="#" class="instagram__item about-instagram-quote swiper-slide">
+								<span class="about-instagram-quote__text">&ldquo;Strength comes from resilience, resilience comes from having a sense of self, and sense of self comes from balance.&rdquo;</span>
+								<span class="about-instagram-quote__mark" aria-hidden="true">Amovita</span>
+							</a>
+							<a href="#" class="instagram__item swiper-slide"><picture><source srcset="img/about/about-insta-3.webp" type="image/webp"><img src="img/about/about-insta-3.jpg" alt="Amovita on Instagram"></picture></a>
+							<a href="#" class="instagram__item swiper-slide"><picture><source srcset="img/about/about-insta-4.webp" type="image/webp"><img src="img/about/about-insta-4.jpg" alt="Amovita on Instagram"></picture></a>
+							<a href="#" class="instagram__item swiper-slide"><picture><source srcset="img/about/about-insta-5.webp" type="image/webp"><img src="img/about/about-insta-5.jpg" alt="Amovita on Instagram"></picture></a>
+							<a href="#" class="instagram__item swiper-slide"><picture><source srcset="img/about/about-insta-6.webp" type="image/webp"><img src="img/about/about-insta-6.jpg" alt="Amovita on Instagram"></picture></a>
+							<a href="#" class="instagram__item swiper-slide" aria-hidden="true" tabindex="-1"><picture><source srcset="img/about/about-insta-1.webp" type="image/webp"><img src="img/about/about-insta-1.jpg" alt=""></picture></a>
+							<a href="#" class="instagram__item about-instagram-quote swiper-slide" aria-hidden="true" tabindex="-1">
+								<span class="about-instagram-quote__text">&ldquo;Strength comes from resilience, resilience comes from having a sense of self, and sense of self comes from balance.&rdquo;</span>
+								<span class="about-instagram-quote__mark" aria-hidden="true">Amovita</span>
+							</a>
+							<a href="#" class="instagram__item swiper-slide" aria-hidden="true" tabindex="-1"><picture><source srcset="img/about/about-insta-3.webp" type="image/webp"><img src="img/about/about-insta-3.jpg" alt=""></picture></a>
+							<a href="#" class="instagram__item swiper-slide" aria-hidden="true" tabindex="-1"><picture><source srcset="img/about/about-insta-4.webp" type="image/webp"><img src="img/about/about-insta-4.jpg" alt=""></picture></a>
+							<a href="#" class="instagram__item swiper-slide" aria-hidden="true" tabindex="-1"><picture><source srcset="img/about/about-insta-5.webp" type="image/webp"><img src="img/about/about-insta-5.jpg" alt=""></picture></a>
+							<a href="#" class="instagram__item swiper-slide" aria-hidden="true" tabindex="-1"><picture><source srcset="img/about/about-insta-6.webp" type="image/webp"><img src="img/about/about-insta-6.jpg" alt=""></picture></a>
+						</div>
 					</div>
 				</div>
 			</section>
@@ -501,7 +529,7 @@
 		</footer>
 
 	</div>
-	<script src="js/main.js?_v=20260728194041"></script>
+	<script src="js/main.js?_v=20260730111826"></script>
 </body>
 
 </html>
