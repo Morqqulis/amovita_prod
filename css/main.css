@@ -11179,15 +11179,15 @@ em {
   }
 }
 
-@supports (padding-bottom: clamp( 2rem , 1.8573975045rem  +  0.7130124777vw , 2.5rem )) {
+@supports (padding-bottom: clamp( 3.5rem , 3.0721925134rem  +  2.1390374332vw , 5rem )) {
   .contact-hero {
-    padding-bottom: clamp( 2rem , 1.8573975045rem  +  0.7130124777vw , 2.5rem );
+    padding-bottom: clamp( 3.5rem , 3.0721925134rem  +  2.1390374332vw , 5rem );
   }
 }
 
-@supports not (padding-bottom: clamp( 2rem , 1.8573975045rem  +  0.7130124777vw , 2.5rem )) {
+@supports not (padding-bottom: clamp( 3.5rem , 3.0721925134rem  +  2.1390374332vw , 5rem )) {
   .contact-hero {
-    padding-bottom: calc(2rem + 0.5*(100vw - 20rem)/70.125);
+    padding-bottom: calc(3.5rem + 1.5*(100vw - 20rem)/70.125);
   }
 }
 
@@ -11353,12 +11353,12 @@ em {
   width: 3.5rem;
   height: 3.5rem;
   border-radius: 0.5rem;
-  color: #229591;
+  color: #121d3b;
 }
 
 .contact-method__icon svg {
-  width: 2rem;
-  height: 2rem;
+  width: 1.5rem;
+  height: 1.5rem;
 }
 
 .contact-method__icon_green-light {
@@ -11597,7 +11597,7 @@ em {
 }
 
 .no-webp .contact-form::before {
-  background: url("../img/common/testimonial-bg.jpg") center/cover no-repeat; }
+  background: url("../img/common/testimonial-bg.jpg") center 35%/cover no-repeat; }
 
 .contact-form::before {
   content: "";
@@ -11696,7 +11696,7 @@ em {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
-  background-image: url("../img/common/caret-down-muted.svg");
+  background-image: url("../img/common/caret-down-teal.svg");
   background-repeat: no-repeat;
   background-position: right 1.25rem center;
   background-size: 1rem 0.5625rem;
@@ -15256,4 +15256,4 @@ em {
 
 .webp .industry-form::before { background: url(../img/common/testimonial-bg.webp) center/cover no-repeat; }
 
-.webp .contact-form::before { background: url(../img/common/testimonial-bg.webp) center/cover no-repeat; }
+.webp .contact-form::before { background: url(../img/common/testimonial-bg.webp) center 35%/cover no-repeat; }
