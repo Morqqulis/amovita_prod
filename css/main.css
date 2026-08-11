@@ -894,21 +894,21 @@ nav[aria-label=Breadcrumb] [class*=sep] {
 
 .header_stuck {
   position: fixed;
-  padding-top: 0.5rem;
-  padding-bottom: 0.5rem;
-  background-color: #fff;
+  padding-top: 0.6875rem;
+  padding-bottom: 0.6875rem;
+  background-color: #f5f2e8;
   -webkit-box-shadow: 0 0.125rem 1rem rgba(23,37,76,.1);
           box-shadow: 0 0.125rem 1rem rgba(23,37,76,.1);
   -webkit-animation: header-drop .35s ease;
           animation: header-drop .35s ease;
 }
 
-.header_stuck__logo-img {
-  height: 2.75rem;
+.header_stuck .header__logo-img {
+  height: 4.5rem;
 }
 
-.header_stuck__nav {
-  height: 3rem;
+.header_stuck .header__nav {
+  height: 3.375rem;
 }
 
 @-webkit-keyframes header-drop {
@@ -936,9 +936,44 @@ nav[aria-label=Breadcrumb] [class*=sep] {
 }
 
 .page-home .header_stuck {
-  background-color: #17254c;
-  -webkit-box-shadow: 0 0.125rem 1rem rgba(0,0,0,.28);
-          box-shadow: 0 0.125rem 1rem rgba(0,0,0,.28);
+  color: #17254c;
+}
+
+.page-home .header_stuck::before {
+  display: block;
+}
+
+.page-home .header_stuck .header__logo-img_dark {
+  display: block;
+}
+
+.page-home .header_stuck .header__logo-img_light {
+  display: none;
+}
+
+.page-home .header_stuck .header__nav {
+  background-color: #fff;
+  -webkit-box-shadow: 0 0.125rem 0.875rem rgba(23,37,76,.08);
+          box-shadow: 0 0.125rem 0.875rem rgba(23,37,76,.08);
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+}
+
+.page-home .header_stuck .header__link {
+  color: #17254c;
+}
+
+.page-home .header_stuck .header__item_open>.header__toggle {
+  background-color: #f5f2e8;
+}
+
+.page-home .header_stuck .header__cart {
+  color: #17254c;
+  background-color: #fff;
+  -webkit-box-shadow: 0 0.125rem 0.875rem rgba(23,37,76,.08);
+          box-shadow: 0 0.125rem 0.875rem rgba(23,37,76,.08);
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
 }
 
 .footer {
@@ -15048,6 +15083,10 @@ em {
 
   .page-home .header__link:hover {
     background-color: hsla(0,0%,100%,.12);
+  }
+
+  .page-home .header_stuck .header__link:hover {
+    background-color: #f5f2e8;
   }
 
   .footer .footer__recaptcha-link:hover,
