@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-	<title>Publications — Amovita</title>
+	<title>CASE® Model — Amovita</title>
 	<meta charset="UTF-8">
 	<meta name="format-detection" content="telephone=no">
 	<!-- <meta http-equiv="Content-Security-Policy"
@@ -38,7 +38,10 @@
 	<link rel="stylesheet" href="css/main.css?_v=20261004033121">
 </head>
 
-<body class="page-publications">
+<!-- page-shop: the product page belongs to the store, so it shares the
+     store's header behaviour (cart kept in the mobile top bar). -->
+
+<body class="page-product-detail page-shop">
 	<div class="wrapper">
 		<header class="header">
 			<div class="header__container">
@@ -163,169 +166,120 @@
 
 		<main class="page">
 
-			<!-- ================================================= PUBLICATIONS HERO -->
-			<section class="pub-hero">
-				<div class="pub-hero__inner container">
-					<!-- Section head: breadcrumb, then title / lede / CTA one after
-                    another. The stagger lives on the column rather than on
-                    __content so the breadcrumb is part of the same run. -->
-					<div class="pub-hero__col" data-anim-stagger="90">
-						<nav class="pub-hero__crumbs" aria-label="Breadcrumb" data-anim="fade-up">
-							<a href="index.html" class="pub-hero__crumb">Home</a>
-							<span class="pub-hero__crumb-sep" aria-hidden="true">/</span>
-							<span class="pub-hero__crumb pub-hero__crumb_current">Publications</span>
+			<!-- ==================================================== PRODUCT HERO -->
+			<!-- Figma "Shop / Desktop / Product Detail" (748:14558). Left: crumbs +
+              the 805x606 product image; right: title, description, total,
+              quantity and Add to Cart, centred on the image's height.
+              The quantity field is a real number input (name="quantity", the
+              WooCommerce add-to-cart field); js/files/product-detail.js drives
+              the -/+ buttons, the Total line and the button's cart quantity. -->
+			<section class="product-hero">
+				<div class="product-hero__inner container">
+					<div class="product-hero__media" data-anim-stagger="90">
+						<nav class="product-hero__crumbs" aria-label="Breadcrumb" data-anim="fade-up">
+							<a href="index.html" class="product-hero__crumb">Home</a>
+							<span class="product-hero__crumb-sep" aria-hidden="true">/</span>
+							<a href="shop.html" class="product-hero__crumb">Shop</a>
+							<span class="product-hero__crumb-sep" aria-hidden="true">/</span>
+							<span class="product-hero__crumb product-hero__crumb_current" aria-current="page">CASE&reg; Model</span>
 						</nav>
-
-						<div class="pub-hero__content">
-							<h1 class="pub-hero__title" data-anim="fade-up">Amovita <em>Updates</em></h1>
-							<p class="pub-hero__lede" data-anim="fade-up">I hope you enjoy reading my books and publications on leadership capability and neuroscience.</p>
-							<a href="#" class="btn btn_outline pub-hero__cta" data-anim="fade-up">Sign up for our newsletter</a>
+						<div class="product-hero__photo" data-anim="fade-up">
+							<picture><source srcset="img/shop/shop-product-main.webp" type="image/webp"><img class="product-hero__img" src="img/shop/shop-product-main.png" alt="CASE&reg; Model" width="805" height="606"></picture>
 						</div>
+					</div>
+
+					<div class="product-hero__body" data-product data-product-price="8.75" data-anim-stagger="90">
+						<h1 class="product-hero__title" data-anim="fade-up">CASE&reg; Model</h1>
+						<p class="product-hero__text" data-anim="fade-up">The CASE&reg; Yarn Up Time model has been developed specifically to support Aboriginal and Torres Strait Islander people in their roles. The model assists to focus yarning supervision discussions and meetings for effective outcomes. The model is printed back to back (1 side detailed, 1 side blank) on 250gsm.</p>
+
+						<div class="product-hero__total" data-anim="fade-up">
+							<span class="product-hero__total-label">Total:</span>
+							<p class="product-hero__price" aria-live="polite"><strong class="product-hero__amount" data-product-total>$8.75</strong> (GST inclusive)</p>
+						</div>
+
+						<form class="product-hero__buy" action="#" method="post" data-anim="fade-up">
+							<div class="product-qty" role="group" aria-label="Quantity">
+								<button type="button" class="product-qty__btn" data-qty-step="-1" aria-label="Decrease quantity" disabled>
+									<svg aria-hidden="true">
+										<use href="img/icons/icons.svg#svg-minus"></use>
+									</svg>
+								</button>
+								<label class="product-qty__label" for="product-qty-input">Quantity</label>
+								<input class="product-qty__input" type="number" id="product-qty-input" name="quantity" value="1" min="1" max="99" step="1" inputmode="numeric" data-qty-input>
+								<button type="button" class="product-qty__btn" data-qty-step="1" aria-label="Increase quantity">
+									<svg aria-hidden="true">
+										<use href="img/icons/icons.svg#svg-plus"></use>
+									</svg>
+								</button>
+							</div>
+							<button type="button" class="btn btn_primary product-hero__cta" data-cart-add data-cart-title="CASE® Model" data-cart-price="8.75" data-cart-qty="1">Add to Cart</button>
+						</form>
 					</div>
 				</div>
-
-				<!-- Decorative monstera line-art: drifts slowly against the scroll
-                 and leans toward the pointer, same treatment as the About and
-                 Services hero leaves. `fade` (opacity only) is mandatory here —
-                 parallax.js rewrites this element's transform every frame and
-                 would fight a directional variant for it. -->
-				<picture><source srcset="img/publications/pub-hero-leaves.webp" type="image/webp"><img class="pub-hero__deco" src="img/publications/pub-hero-leaves.png" alt="" width="816" height="611" data-anim="fade" data-parallax="0.05" data-parallax-mouse="12" aria-hidden="true"></picture>
-				<img class="pub-hero__wave" src="img/common/wave-cream.svg" alt="" aria-hidden="true">
+				<img class="product-hero__wave" src="img/common/wave-cream.svg" alt="" aria-hidden="true">
 			</section>
 
-			<!-- ============================================== PUBLICATIONS LISTING -->
-			<section class="pub-list">
-				<div class="pub-list__inner container">
-
-					<!-- The three pills are only ever restyled by publications.js
-                    (active class + aria-pressed) — never hidden — so they are
-                    safe to reveal one by one. -->
-					<div class="pub-filters" role="group" aria-label="Filter publications" data-anim-stagger="90">
-						<button type="button" class="pub-filters__btn pub-filters__btn_active" aria-pressed="true" data-anim="fade-up">All</button>
-						<button type="button" class="pub-filters__btn" aria-pressed="false" data-anim="fade-up">Articles</button>
-						<button type="button" class="pub-filters__btn" aria-pressed="false" data-anim="fade-up">Books</button>
+			<!-- ================================================ YOU MAY ALSO LIKE -->
+			<!-- Static grid (nothing here is filtered or paged), so the cards
+              come in one after another; the card block is the store's
+              .shop-product (pages/shop.scss). -->
+			<section class="product-related" aria-labelledby="product-related-title">
+				<div class="product-related__inner container">
+					<h2 class="product-related__title" id="product-related-title" data-anim="fade-up">You may also like...</h2>
+					<div class="product-related__grid" data-anim-stagger="80">
+						<article class="shop-product" data-anim="fade-up">
+							<div class="shop-product__media"><picture><source srcset="img/shop/shop-leadership-book.webp" type="image/webp"><img class="shop-product__img" src="img/shop/shop-leadership-book.png" alt="Developing Leadership Excellence" width="325" height="260" loading="lazy"></picture></div>
+							<div class="shop-product__body">
+								<div class="shop-product__info">
+									<h3 class="shop-product__title"><a class="shop-product__link" href="product-detail.html">Developing Leadership Excellence</a></h3>
+									<p class="shop-product__text">A practice guide for the new professional supervisor &mdash; the first text of its kind to integrate the PASE&reg; model.</p>
+								</div>
+								<div class="shop-product__meta">
+									<span class="shop-product__price">$49.95</span>
+									<button type="button" class="shop-product__cta" data-cart-add data-cart-title="Developing Leadership Excellence" data-cart-price="49.95">Add to Cart</button>
+								</div>
+							</div>
+						</article>
+						<article class="shop-product" data-anim="fade-up">
+							<div class="shop-product__media"><picture><source srcset="img/shop/shop-pase-model.webp" type="image/webp"><img class="shop-product__img" src="img/shop/shop-pase-model.png" alt="PASE&reg; Model" width="325" height="260" loading="lazy"></picture></div>
+							<div class="shop-product__body">
+								<div class="shop-product__info">
+									<h3 class="shop-product__title"><a class="shop-product__link" href="product-detail.html">PASE&reg; Model</a></h3>
+									<p class="shop-product__text">A practice guide for the new professional supervisor &mdash; the first text of its kind to integrate the PASE&reg; model.</p>
+								</div>
+								<div class="shop-product__meta">
+									<span class="shop-product__price">$49.95</span>
+									<button type="button" class="shop-product__cta" data-cart-add data-cart-title="PASE® Model" data-cart-price="49.95">Add to Cart</button>
+								</div>
+							</div>
+						</article>
+						<article class="shop-product" data-anim="fade-up">
+							<div class="shop-product__media"><picture><source srcset="img/shop/shop-values-cards.webp" type="image/webp"><img class="shop-product__img" src="img/shop/shop-values-cards.png" alt="Values Cards" width="325" height="260" loading="lazy"></picture></div>
+							<div class="shop-product__body">
+								<div class="shop-product__info">
+									<h3 class="shop-product__title"><a class="shop-product__link" href="product-detail.html">Values Cards</a></h3>
+									<p class="shop-product__text">A practice guide for the new professional supervisor &mdash; the first text of its kind to integrate the PASE&reg; model.</p>
+								</div>
+								<div class="shop-product__meta">
+									<span class="shop-product__price">$49.95</span>
+									<button type="button" class="shop-product__cta" data-cart-add data-cart-title="Values Cards" data-cart-price="49.95">Add to Cart</button>
+								</div>
+							</div>
+						</article>
+						<article class="shop-product" data-anim="fade-up">
+							<div class="shop-product__media"><picture><source srcset="img/shop/shop-pase-model.webp" type="image/webp"><img class="shop-product__img" src="img/shop/shop-pase-model.png" alt="PASE&reg; Model" width="325" height="260" loading="lazy"></picture></div>
+							<div class="shop-product__body">
+								<div class="shop-product__info">
+									<h3 class="shop-product__title"><a class="shop-product__link" href="product-detail.html">PASE&reg; Model</a></h3>
+									<p class="shop-product__text">A practice guide for the new professional supervisor &mdash; the first text of its kind to integrate the PASE&reg; model.</p>
+								</div>
+								<div class="shop-product__meta">
+									<span class="shop-product__price">$49.95</span>
+									<button type="button" class="shop-product__cta" data-cart-add data-cart-title="PASE® Model" data-cart-price="49.95">Add to Cart</button>
+								</div>
+							</div>
+						</article>
 					</div>
-
-					<!-- MOTION SCOPE — the reveal is attached to the GRID, never to
-                    the cards inside it. publications.js owns each card's
-                    `hidden` flag (category filter + client-side pagination), and
-                    a card that is display:none while the observer sweeps past
-                    never intersects, so it would still be sitting at opacity 0
-                    when a later filter click puts it back on screen. Revealing
-                    the container once means every card the JS re-shows inherits
-                    a fully opaque parent and is visible immediately. -->
-					<div class="pub-list__grid" data-anim="fade-up">
-
-						<article class="pub-card pub-card_olive">
-							<span class="pub-card__bar" aria-hidden="true"></span>
-							<div class="pub-card__body">
-								<span class="label"><span class="label__dot" aria-hidden="true"></span>Book</span>
-								<div class="pub-card__content">
-									<div class="pub-card__cover pub-card__cover_book">
-										<picture><source srcset="img/publications/pub-book-accelerator.webp" type="image/webp"><img class="pub-card__cover-img" src="img/publications/pub-book-accelerator.png" alt="The Leadership Accelerator book cover"></picture>
-									</div>
-									<h3 class="pub-card__title">The Leadership Accelerator</h3>
-									<p class="pub-card__text">How Neuroscience Defines Inspirational Business Leaders</p>
-								</div>
-								<a href="#" class="btn btn_outline pub-card__cta">Read more</a>
-							</div>
-						</article>
-
-						<article class="pub-card pub-card_green">
-							<span class="pub-card__bar" aria-hidden="true"></span>
-							<div class="pub-card__body">
-								<span class="label"><span class="label__dot" aria-hidden="true"></span>Book</span>
-								<div class="pub-card__content">
-									<div class="pub-card__cover pub-card__cover_book">
-										<picture><source srcset="img/publications/pub-book-excellence.webp" type="image/webp"><img class="pub-card__cover-img" src="img/publications/pub-book-excellence.png" alt="Developing Leadership Excellence book cover"></picture>
-									</div>
-									<h3 class="pub-card__title">Successful Supervision and Leadership</h3>
-									<p class="pub-card__text">Ensuring High-Performance Outcomes Using the PASE&trade; Model</p>
-								</div>
-								<a href="#" class="btn btn_outline pub-card__cta">Read more</a>
-							</div>
-						</article>
-
-						<article class="pub-card pub-card_blue">
-							<span class="pub-card__bar" aria-hidden="true"></span>
-							<div class="pub-card__body">
-								<span class="label"><span class="label__dot" aria-hidden="true"></span>Book</span>
-								<div class="pub-card__content">
-									<div class="pub-card__cover pub-card__cover_book">
-										<picture><source srcset="img/publications/pub-book-routledge.webp" type="image/webp"><img class="pub-card__cover-img" src="img/publications/pub-book-routledge.png" alt="The Routledge International Handbook of Social Work Supervision book cover"></picture>
-									</div>
-									<h3 class="pub-card__title">The Routledge International Handbook of Social Work Supervision</h3>
-									<p class="pub-card__text">Ensuring High-Performance Outcomes Using the PASE&trade; Model</p>
-								</div>
-								<a href="#" class="btn btn_outline pub-card__cta">Read more</a>
-							</div>
-						</article>
-
-						<article class="pub-card pub-card_coffee">
-							<span class="pub-card__bar" aria-hidden="true"></span>
-							<div class="pub-card__body">
-								<span class="label"><span class="label__dot" aria-hidden="true"></span>Article</span>
-								<div class="pub-card__content">
-									<div class="pub-card__cover">
-										<picture><source srcset="img/publications/pub-article-yarnup.webp" type="image/webp"><img class="pub-card__cover-img" src="img/publications/pub-article-yarnup.jpg" alt="Developing Culturally Responsive Supervision Through Yarn Up Time"></picture>
-									</div>
-									<h3 class="pub-card__title">Developing Culturally Responsive Supervision Through Yarn Up Time&hellip;</h3>
-									<p class="pub-card__text">Ensuring High-Performance Outcomes Using the PASE&trade; Model</p>
-								</div>
-								<a href="#" class="btn btn_outline pub-card__cta">Read more</a>
-							</div>
-						</article>
-
-						<article class="pub-card pub-card_olive">
-							<span class="pub-card__bar" aria-hidden="true"></span>
-							<div class="pub-card__body">
-								<span class="label"><span class="label__dot" aria-hidden="true"></span>Article</span>
-								<div class="pub-card__content">
-									<div class="pub-card__cover">
-										<picture><source srcset="img/publications/pub-article-before-her-time.webp" type="image/webp"><img class="pub-card__cover-img" src="img/publications/pub-article-before-her-time.png" alt="Before Her Time"></picture>
-									</div>
-									<h3 class="pub-card__title">Before Her Time</h3>
-									<p class="pub-card__text">I am pleased to advise that my latest book, Before Her Time has just been published by Balboa Press.</p>
-								</div>
-								<a href="#" class="btn btn_outline pub-card__cta">Read more</a>
-							</div>
-						</article>
-
-						<article class="pub-card pub-card_orange">
-							<span class="pub-card__bar" aria-hidden="true"></span>
-							<div class="pub-card__body">
-								<span class="label"><span class="label__dot" aria-hidden="true"></span>Article</span>
-								<div class="pub-card__content">
-									<div class="pub-card__cover">
-										<picture><source srcset="img/publications/pub-article-companion-animals.webp" type="image/webp"><img class="pub-card__cover-img" src="img/publications/pub-article-companion-animals.jpg" alt="Roles in Caring for Humans and their Companion Animals"></picture>
-									</div>
-									<h3 class="pub-card__title">Roles in Caring for Humans and their Companion Animals</h3>
-									<p class="pub-card__text">This innovative book edited by Professor Kori Logan from Colorado State University is an insightful</p>
-								</div>
-								<a href="#" class="btn btn_outline pub-card__cta">Read more</a>
-							</div>
-						</article>
-
-					</div>
-
-					<!-- Same reasoning as the grid: the row itself reveals, the page
-                    numbers inside it do not — publications.js hides the tabs it
-                    does not need (`el.hidden = n > pages`), so per-tab reveals
-                    would strand a tab invisible the moment a filter grew the
-                    page count back. -->
-					<nav class="pub-pagination" aria-label="Publications pages" data-anim="fade-up">
-						<div class="pub-pagination__pages">
-							<span class="pub-pagination__page pub-pagination__page_active" aria-current="page">1</span>
-							<a href="#" class="pub-pagination__page">2</a>
-							<a href="#" class="pub-pagination__page">3</a>
-						</div>
-						<div class="pub-pagination__nav">
-							<a href="#" class="pub-pagination__prev">Previous</a>
-							<span class="pub-pagination__nav-divider" aria-hidden="true"></span>
-							<a href="#" class="pub-pagination__next">Next</a>
-						</div>
-					</nav>
-
 				</div>
 			</section>
 
